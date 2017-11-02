@@ -1,17 +1,33 @@
-/* Start / Splash Screen Objects */
+/* Screens */
 
+.splash-screen {
+    text-align: center;
 
+}
+
+.game-screen {
+    display: none;          /* default - unhide when they click start */
+    text-align: center;
+
+}
+
+.score-stats {
+    display: none;
+
+}
+
+.game-over-screen {
+    display: none;          /* default - unhide when game ends */
+    text-align: center;
+
+}
 
 
 
 
 /* Gameplay Objects */
+.crate {
+    position: absolute;
 
-
-
-/* Items */
-
-
-
-
+}
 

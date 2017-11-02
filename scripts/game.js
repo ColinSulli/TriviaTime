@@ -16,10 +16,9 @@ var score = 0;
 var mute  = true;
 
 var KEYS = {
-  up: 38,         // jump
-  down: 40,       // crouch
-  spacebar: 32,   // currrently unused - gun maybe?
-  F5: 116         // refresh page
+  up:       38,  // jump
+  down:     40,  // crouch
+  spacebar: 32   // currrently unused - gun maybe?
 }
 
 
@@ -30,8 +29,16 @@ var KEYS = {
 $(document).ready( function() {
   console.log("Ready!");
   
+  // event handlers
   $(window).keydown(keydownRouter);
-  $("#start").click(start_game);
+  $("#start-button").click(start_game);
+
+  // $("#replay-button").click();
+  // $("#back-to-main").click();
+
+  // dynamic event handlers (for things that get dynamically created)
+  // $(document).on("this_event", "this_class_or_id", function_variable);  // i.e. var jump = function() { ... }
+
 
 
 
@@ -46,33 +53,45 @@ $(document).ready( function() {
 
 /// Callback Functions ///
 
-
-var start_game = function() {
-  console.log("Starting Game!");
-
-}//end start_game()
-
-
-
-
-
 function keydownRouter(e) {
   switch (e.which) {
     case KEYS.up:
-      num_jumps++;
-      // call jump function
+      jump();
       break;
     case KEYS.down:
-      num_crouch++;
-      // call crouch function
+      crouch();
       break;
     case KEYS.spacebar:
       // currently unused
       break;
-    case KEYS.F5:
-      console.log("Refreshing page...");
-      break;
     default:
-      console.log("Invalid input!");
+      break;
   }
 }//end keydownRouter()
+
+
+var start_game = function() {
+  console.log("Starting Game!");
+
+
+
+}//end start_game()
+
+
+var jump = function() {
+  console.log("jumping...");
+  num_jumps++;
+
+
+}//end jump()
+
+
+var crouch = function() {
+  console.log("crouching...");
+  num_crouch++;
+
+
+}//end crouch()
+
+
+

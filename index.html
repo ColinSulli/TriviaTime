@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <!-- JAVASCRIPT FILES -->
-  <script src='scripts/jquery.min.js'></script>
-  <!-- <script src='scripts/FIXME.js'></script> -->
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/game.js"></script>
 
   <!-- AUDIO -->
   <audio preload="auto">
@@ -26,8 +26,41 @@
 <!-- HTML -->
 <body>
 
+  <!-- START / SPLASH-SCREEN -->
+  <div class="splash-screen"> 
+    <h1 id="game-title">FIXME</h1>
+    <h2>Created by Team P03</h2>
+    <br><br>
+    <h2>Controls:</h2>
+    <p><strong>Up arrow: </strong>Jump</p>
+    <p><strong>Down arrow: </strong>Crouch</p>
+    <br><br>
+    <button id="start-button">Start Game</button>
+  </div> 
+  <!-- END START / SPLASH-SCREEN -->
 
+  <!-- GAME SCREEN -->
+  <div class="game-screen">
 
+    <!-- IN-GAME SCORE & STATS -->
+    <div class="score-stats">
+      <p>Score:</p>
+      <h1 id="score-box">0</h1>
+      <!-- add stats (num jumps, num crouches)? lives remaining? -->
+    </div> 
+    <!-- END IN-GAME SCORE & STATS -->
+
+  </div> 
+  <!-- END GAME SCREEN -->
+
+  <!-- GAME OVER SCREEN -->
+  <div class="game-over-screen">
+    <h2 id="game-over-score"></h2>
+    <h1>GAME OVER!</h1>
+    <button id="replay-button">Replay</button>
+    <button id="back-to-main">Back to Main</button>
+  </div> 
+  <!-- END GAME OVER SCREEN -->
 
 </body>
 
