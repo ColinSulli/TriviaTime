@@ -5,14 +5,28 @@
 
 }
 
+.game-description {
+    position: absolute;
+    text-align: center;
+    width: 60%;
+}
+
 .game-screen {
+    position: relative;
+    vertical-align: middle;
+    width: 100%
+    height: 100%;
+
     display: none;          /* default - unhide when they click start */
     text-align: center;
 
 }
 
 .score-stats {
-    display: none;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+    border: solid black 2px;
 
 }
 
@@ -26,8 +40,17 @@
 
 
 /* Gameplay Objects */
-.crate {
+.bad-obj {
+    position: absolute;         
+    height: 50px;           /* FIXME: just placeholder values for now */
+    width: 50px;            /* FIXME: just placeholder values for now */
+
+}
+
+.powerup {
     position: absolute;
+    height: 50px;           /* FIXME: just placeholder values for now */
+    width: 50px;            /* FIXME: just placeholder values for now */
 
 }
 

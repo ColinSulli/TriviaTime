@@ -28,13 +28,17 @@
 
   <!-- START / SPLASH-SCREEN -->
   <div class="splash-screen"> 
-    <h1 id="game-title">FIXME</h1>
-    <h2>Created by Team P03</h2>
+    <h1 id="game-title">FIXME: Game Title</h1>
+    <!-- Game Description -->
+    <div id="game-description">
+      <p>The goal of this game is earn the high score by controlling your character and having him/her run as far as possible by avoiding “bad” objects by jumping, crouching, and using collectible power-ups.</p>
+    </div>
+
     <br><br>
     <h2>Controls:</h2>
     <p><strong>Up arrow: </strong>Jump</p>
     <p><strong>Down arrow: </strong>Crouch</p>
-    <br><br>
+    <br>
     <button id="start-button">Start Game</button>
   </div> 
   <!-- END START / SPLASH-SCREEN -->
@@ -42,10 +46,12 @@
   <!-- GAME SCREEN -->
   <div class="game-screen">
 
+    <!-- Background Image -->
+    <!-- <img src="img/FIXME"> -->
+
     <!-- IN-GAME SCORE & STATS -->
     <div class="score-stats">
-      <p>Score:</p>
-      <h1 id="score-box">0</h1>
+      <h1 id="score-box">Score: 0</h1>
       <!-- add stats (num jumps, num crouches)? lives remaining? -->
     </div> 
     <!-- END IN-GAME SCORE & STATS -->
@@ -55,7 +61,7 @@
 
   <!-- GAME OVER SCREEN -->
   <div class="game-over-screen">
-    <h2 id="game-over-score"></h2>
+    <h2 id="game-over-score">Your Score: </h2>
     <h1>GAME OVER!</h1>
     <button id="replay-button">Replay</button>
     <button id="back-to-main">Back to Main</button>
