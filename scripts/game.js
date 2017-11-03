@@ -22,6 +22,13 @@ var mute   = true;
 var high_imgs = ["bird.png"];     // FIXME: add more, they are randomly chosen in function
 var low_imgs  = ["crate1.png"];   // FIXME: add more, they are randomly chosen in function
 
+var difficulty = "medium";  // default
+var difficulty_levels = {
+  0: "easy",
+  1: "medium",
+  2: "hard"
+}
+
 var KEYS = {
   up:       38,  // jump
   down:     40,  // crouch
@@ -38,7 +45,7 @@ $(document).ready( function() {
   
   // event handlers
   $(window).keydown(keydownRouter);
-  $("#start-button").click(start_game);
+  $("#start-button").click(update_settings);  // update_settings() calls start game
 
   // $("#replay-button").click();
   // $("#back-to-main").click();
@@ -49,9 +56,11 @@ $(document).ready( function() {
 
 
 
-  // From Assignment 3 -- keeping this here cuz we'll definitely need it
+  // From Assignment 3 -- keeping this here because we'll definitely need it
   setInterval( function() {
-    // do stuff every 100 ms / 0.1 sec
+    // check_collisions_birds();
+    // check_collisions_crates();
+    // check_collisions_powerup();
   }, 100);
 
 
@@ -77,6 +86,23 @@ function keydownRouter(e) {
 }//end keydownRouter()
 
 
+// apply settings chosen by user on splash screen, then start the game
+function update_settings() {
+  // update character
+
+  console.log("Character selected was", "FIXME");
+
+  // update difficulty
+  var slider_val = Math.floor($(".difficulty-slider").val());
+  difficulty = difficulty_levels[slider_val];
+  console.log("Difficulty set to", difficulty);
+
+  // store name or initials for keeping high score?
+
+  start_game();
+}//end update_settings()
+
+
 var start_game = function() {
   console.log("Starting Game!");
   state = "running";
@@ -89,7 +115,6 @@ var start_game = function() {
 
   // randomly spawn a power-up every FIXME seconds
   // auto_spawn_powerup = setInterval(function() { create_bad_obj() }, (1000 * (10 + (Math.random() * 10)) ));
-
 }//end start_game()
 
 

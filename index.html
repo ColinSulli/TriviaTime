@@ -29,9 +29,19 @@
   <!-- START / SPLASH-SCREEN -->
   <div class="splash-screen"> 
     <h1 id="game-title">FIXME: Game Title</h1>
+
     <!-- Game Description -->
-    <div id="game-description">
-      <p>The goal of this game is earn the high score by controlling your character and having him/her run as far as possible by avoiding “bad” objects by jumping, crouching, and using collectible power-ups.</p>
+    <p id="game-description">The goal of this game is earn the high score by controlling your character and having him/her run as far as possible by avoiding “bad” objects by jumping, crouching, and using collectible power-ups.</p>
+
+    <!-- Character Selection -->
+    <div id="character-select">
+      <p>FIXME: add character selection stuff</p>
+    </div>
+
+    <!-- Difficutly Selection/Slider -->
+    <div id="difficulty">
+      <p>Select Difficulty Level:</p>
+      <input type="range" min="0" max="2" value="1" step="0.5" class="difficulty-slider">
     </div>
 
     <br><br>
@@ -52,9 +62,16 @@
     <!-- IN-GAME SCORE & STATS -->
     <div class="score-stats">
       <h1 id="score-box">Score: 0</h1>
-      <!-- add stats (num jumps, num crouches)? lives remaining? -->
+
+      <!-- add lives remaining counter -->
+
+      <!-- add stats (num jumps, num crouches)? -->
     </div> 
     <!-- END IN-GAME SCORE & STATS -->
+
+    <div id="player">
+      <!-- FIXME: add image -->
+    </div>
 
   </div> 
   <!-- END GAME SCREEN -->
