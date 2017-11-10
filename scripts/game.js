@@ -13,21 +13,15 @@ var OBJECT_REFRESH_RATE = 50;   // ms
 var SCORE_UNIT = 100;           // scoring is in 100-point units
 
 // Global game variables
-var player = 0;         // gets set to $("#player") after page load
-var state  = "initial";  // change based on game state: "initial", "running", "game_over"
+var player = 0;                 // gets set to $("#player") after page load
+var state  = "initial";         // change based on game state: "initial", "running", "game_over"
 var score  = 0;
 var mute   = true;
+var difficulty = 3;             // default... 1 = easiest, 5 = hardest
 
 // image arrays
-var high_imgs = ["bird.png"];     // FIXME: add more, they are randomly chosen in function
-var low_imgs  = ["crate1.png"];   // FIXME: add more, they are randomly chosen in function
-
-var difficulty = "medium";  // default
-var difficulty_levels = {
-  0: "easy",
-  1: "medium",
-  2: "hard"
-}
+var high_imgs = ["bird1.png", "bird2.png"];     // FIXME: add more, they are randomly chosen in function
+var low_imgs  = ["crate1.png"];                 // FIXME: add more, they are randomly chosen in function
 
 var KEYS = {
   up:       38,  // jump
@@ -42,6 +36,14 @@ $(document).ready( function() {
   console.log("Ready!");
 
   player = $("#player");  // FIXME
+
+
+  // FIXME: just for testing stuff /////////////////////////////
+  var abc = "test".substr(1, 2);
+  console.log(abc);
+
+  // end FIXME ////////////////////////////////////////////////
+
   
   // event handlers
   $(window).keydown(keydownRouter);
@@ -55,8 +57,7 @@ $(document).ready( function() {
 
 
 
-
-  // From Assignment 3 -- keeping this here because we'll definitely need it
+  // check for collisions every 100 ms
   setInterval( function() {
     // check_collisions_birds();
     // check_collisions_crates();
@@ -93,9 +94,10 @@ function update_settings() {
   console.log("Character selected was", "FIXME");
 
   // update difficulty
-  var slider_val = Math.floor($(".difficulty-slider").val());
-  difficulty = difficulty_levels[slider_val];
+  difficulty = Math.floor($(".difficulty-slider").val());
   console.log("Difficulty set to", difficulty);
+  // difficulty increases number of crates per second
+  // fixme: DO something with difficutly (i.e. increase number of crates, increase speed, etc.)
 
   // store name or initials for keeping high score?
 
@@ -110,11 +112,19 @@ var start_game = function() {
   $(".splash-screen").hide();
   $(".game-screen").show();
 
-  // randomly spawn a "bad object" every FIXME seconds
-  auto_spawn_bad_obj = setInterval(function() { create_bad_obj() }, (1000 * (10 + (Math.random() * 10)) ));
+  // randomly spawn a "bad object" every min - max seconds
+  // difficulty = 1 (easy)   -> create 1 bad obj every 2.0 - 4.0 seconds ...
+  // difficulty = 3 (medium) -> create 1 bad obj every 0.6 - 1.3 seconds ...
+  // difficulty = 5 (hard)   -> create 1 bad obj every 0.4 - 0.8 seconds
+  var min_interval_B = 2.0 / difficulty;
+  var max_interval_B = 4.0 / difficulty;
+  auto_spawn_bad_obj = setInterval(function() { create_bad_obj() }, (1000 * get_random_num(min_interval_B, max_interval_B) ));
 
-  // randomly spawn a power-up every FIXME seconds
-  // auto_spawn_powerup = setInterval(function() { create_bad_obj() }, (1000 * (10 + (Math.random() * 10)) ));
+  // randomly spawn a powerup every min - max seconds
+  // var min_interval_P = 10.0 * difficulty;
+  // var max_interval_P = 15.0 * difficulty;
+  // auto_spawn_bad_obj = setInterval(function() { create_powerup() }, (1000 * get_random_num(min_interval_P, max_interva_P) ));
+
 }//end start_game()
 
 
@@ -128,13 +138,13 @@ function create_bad_obj() {
     // select random "low image" to generate
     var img_index = Math.floor(Math.random() * low_imgs.length);
     this_image = low_imgs[img_index];
-  }
+  }//end if
 
   else {
     // select random "high image" to generate
     var img_index = Math.floor(Math.random() * high_imgs.length);
     this_image = high_imgs[img_index];
-  }
+  }//end else
 
   // create object div and add to screen
   var obj_div_str = "<div id='obj-" + bad_obj_idx + "' class='bad-obj'></div>"
@@ -161,18 +171,22 @@ function create_bad_obj() {
 
 
 var jump = function() {
+  if (state !== "running") {
+    return;
+  }//end if
+
   console.log("jumping...");
   num_jumps++;
-
-
 }//end jump()
 
 
 var crouch = function() {
+  if (state !== "running") {
+    return;
+  }//end if
+
   console.log("crouching...");
   num_crouch++;
-
-
 }//end crouch()
 
 
@@ -228,8 +242,6 @@ function handle_collision_bad() {
 
   // FIXME: we could add animation or add blood/scrapes to the player after each collision
   // num_lives--;
-
-
 }//end handle_collision_bad()
 
 
@@ -238,8 +250,6 @@ function handle_collision_powerup(power_up_type) {
   // FIXME: we could add animation when they earn a power up
   // need to add gun in their hand if that's the power up they got (if we're still doing this)
   // num_lives++;
-
-
 }//end handle_collision_powerup()
 
 
