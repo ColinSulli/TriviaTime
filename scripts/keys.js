@@ -1,5 +1,8 @@
 // GLOBAL KEYS dictionary
 // Information gathered from: https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+
+// FIXME: It might just be easier to use a keyDownRouter for numbers (key indices) instead of listing them all
+
 var KEYS = {
     backspace:          8,
     tab:                9,

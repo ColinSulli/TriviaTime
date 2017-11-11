@@ -1,8 +1,29 @@
 /* Generic HTML Tags */
+p {
+    font-weight: bold;
+
+}
+
 footer {
-    
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    visibility: hidden;          /* Default: show only during interactive mode */
 }
 
 /* Sidebar Items */
 
 
+
+
+/* Classes */
+.main {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+}

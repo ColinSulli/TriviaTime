@@ -1,4 +1,4 @@
-// - - - - -  GLOBAL VARS - - - - - //
+// ==================== GLOBAL VARS ==================== //
 
 // Counters
 
@@ -6,14 +6,13 @@
 // Size Constants
 var OBJECT_SPEED = 5;           // pixels per ms
 var OBJECT_REFRESH_RATE = 50;   // ms
-var SCORE_UNIT = 100;           // scoring is in 100-point units
 
-var state = "initial";         // change based on game state: "initial", "running", "game_over"
-
+var state = "initial";         // options: "initial" or "running"
 
 
 
-// - - - - -  MAIN CODE - - - - - //
+
+// ==================== MAIN CODE ==================== //
 
 $(document).ready( function() {
     console.log("Ready!");
@@ -24,13 +23,22 @@ $(document).ready( function() {
 
 });//end document.ready()
 
+// ==================== CALLBACK FUNCTIONS ==================== //
 
 function keydownRouter(e) {
     console.log("You hit the " + String.fromCharCode(e.which) + " key; index = " + e.which);
 
+    // transition from Start screen to Interactive one on first keypress
+    if (state === "initial") {
+        $("#start-screen").hide();
+        $("footer").css("visibility", "visible");
+        state = "running";
+    }//end if
+
+    e.preventDefault();
+
     switch (e.which) {
         case KEYS.escape:
-            e.preventDefault();
             exit();
             break;
         default:
@@ -42,14 +50,15 @@ function keydownRouter(e) {
 
 
 function exit() {
-    // show main screen again
-
     // stop all animations
 
     // stop all sounds
 
-    state = "initial";
+    // show main screen again
+    $("#start-screen").show();
+    $("footer").css("visibility", "hidden");
 
+    state = "initial";
 }//end exit()
 
 
