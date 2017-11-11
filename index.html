@@ -8,7 +8,8 @@
 
   <!-- JAVASCRIPT FILES -->
   <script src="scripts/jquery.min.js"></script>
-  <script src="scripts/game.js"></script>
+  <script src="scripts/keys.js"></script>
+  <script src="scripts/music_maker.js"></script>
 
   <!-- AUDIO -->
   <audio preload="auto">
@@ -26,66 +27,15 @@
 <!-- HTML -->
 <body>
 
-  <!-- START / SPLASH-SCREEN -->
-  <div class="splash-screen"> 
+  <!-- MAIN SCREEN -->
+  <div class="FIXME"> 
     <h1 id="game-title">FIXME: Game Title</h1>
-
-    <!-- Game Description -->
-    <p id="game-description">The goal of this game is earn the high score by controlling your character and having him/her run as far as possible by avoiding “bad” objects by jumping, crouching, and using collectible power-ups.</p>
-    <!-- FIXME: add example: show "Avoid these:" [picture of crate/bird], show "Collect these:" [picture of powerup] -->
-
-    <!-- Character Selection -->
-    <div id="character-select">
-      <p>FIXME: add character selection stuff</p>
-    </div>
-
-    <!-- Difficutly Selection/Slider -->
-    <div id="difficulty">
-      <p>Select Difficulty Level:</p>
-      <input type="range" min="1" max="5" value="3" step="0.25" class="difficulty-slider">
-    </div>
-
-    <br><br>
-    <h2>Controls:</h2>
-    <p><strong>Up arrow: </strong>Jump</p>
-    <p><strong>Down arrow: </strong>Crouch</p>
-    <br>
-    <button id="start-button">Start Game</button>
-  </div> 
-  <!-- END START / SPLASH-SCREEN -->
-
-  <!-- GAME SCREEN -->
-  <div class="game-screen">
-
-    <!-- Background Image -->
-    <!-- <img src="img/FIXME"> -->
-
-    <!-- IN-GAME SCORE & STATS -->
-    <div class="score-stats">
-      <h1 id="score-box">Score: 0</h1>
-
-      <!-- add lives remaining counter -->
-
-      <!-- add stats (num jumps, num crouches)? -->
-    </div> 
-    <!-- END IN-GAME SCORE & STATS -->
-
-    <div id="player">
-      <!-- FIXME: add image -->
-    </div>
+    <p id="instructions">Press any key to start</p>
 
   </div> 
-  <!-- END GAME SCREEN -->
-
-  <!-- GAME OVER SCREEN -->
-  <div class="game-over-screen">
-    <h2 id="game-over-score">Your Score: </h2>
-    <h1>GAME OVER!</h1>
-    <button id="replay-button">Replay</button>
-    <button id="back-to-main">Back to Main</button>
-  </div> 
-  <!-- END GAME OVER SCREEN -->
+  <!-- END MAIN SCREEN -->
 
 </body>
+<footer>Hit the [Esc] key to exit</footer>
 
 </html>
