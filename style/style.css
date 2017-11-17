@@ -22,8 +22,12 @@ footer {
 
 /* Classes */
 .main {
-    height: 100%;
+    height: 500px;
     width: 100%;
     text-align: center;
 
+}
+
+.images {
+    position: absolute;
 }
