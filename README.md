@@ -34,23 +34,23 @@ D: https://giphy.com/gifs/game-games-colors-bvngDHrVOGU92
 E: 
 F: 
 G: https://giphy.com/gifs/loop-infinite-geometry-3o7buaucmSsxQf1pZK
-H: 
+H: https://giphy.com/stickers/halloween-excited-3o7aCQi2ZBq46pjkek
 I: 
-J: 
-K: 
-L: 
+J: https://giphy.com/stickers/3ov9k9Y2tlz5HzILxm
+K: https://giphy.com/stickers/heyduggee-httpwwwheyduggeecom-l378B5epw44KaWFhK
+L: https://giphy.com/stickers/wetransfer-sticker-3ohhwMDyS6rv3sB8yI
 M: https://giphy.com/stickers/vincemckelvie-transparent-spinning-shape-qvYsKLc5zp1vO
-N: 
-O: 
+N: https://giphy.com/stickers/school-tech-3ov9jQiFcWPPxICjFm
+O: https://giphy.com/stickers/happy-halloween-3ohhwFnB8xXM25p3BS
 P: 
-Q: 
+Q: https://giphy.com/stickers/happy-smile-3ov9jWGJCEPV52RTiM
 R: https://giphy.com/stickers/rad-uyHoPme2WwZG
 S: https://giphy.com/gifs/80s-style-LGXFROB3igTrq
 T: https://giphy.com/stickers/jump-e3DIj171EHmdW
 U: https://giphy.com/stickers/video-image-mlp-Y7fxyuxFXcSUE
-V: 
+V: https://giphy.com/stickers/cat-hungry-3ohryyinlcU8wV1cCk
 W: https://giphy.com/gifs/stare-blobs-JZYjTATZTkXFS
-X: 
+X: https://giphy.com/stickers/cute-fun-xUOxf9qA9iupNWfT3y
 Y: https://giphy.com/stickers/no-sIC1iHWfaiMp2
 Z: https://giphy.com/stickers/grandma-11STxD0O4gunLO
 Keyboard: http://all-free-download.com/free-vector/download/keyboard-clip-art_10181.html
