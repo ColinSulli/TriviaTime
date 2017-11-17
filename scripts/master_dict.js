@@ -1,20 +1,124 @@
 
 var master_dict = {
     piano: { 
-        0: ["./img/batman_run.gif", "./audio/gameover.wav"]
-
-
-
+        0: ["./img/batman_run.gif", "./audio/gameover.wav"],
+        1: ["./img/FIXME", "./audio/FIXME"],
+        2: ["./img/FIXME", "./audio/FIXME"],
+        3: ["./img/FIXME", "./audio/FIXME"],
+        4: ["./img/FIXME", "./audio/FIXME"],
+        5: ["./img/FIXME", "./audio/FIXME"],
+        6: ["./img/FIXME", "./audio/FIXME"],
+        7: ["./img/FIXME", "./audio/FIXME"],
+        8: ["./img/FIXME", "./audio/FIXME"],
+        9: ["./img/FIXME", "./audio/FIXME"],
+        A: ["./img/FIXME", "./audio/FIXME"],
+        B: ["./img/FIXME", "./audio/FIXME"],
+        C: ["./img/FIXME", "./audio/FIXME"],
+        D: ["./img/FIXME", "./audio/FIXME"],
+        E: ["./img/FIXME", "./audio/FIXME"],
+        F: ["./img/FIXME", "./audio/FIXME"],
+        G: ["./img/FIXME", "./audio/FIXME"],
+        H: ["./img/FIXME", "./audio/FIXME"],
+        I: ["./img/FIXME", "./audio/FIXME"],
+        J: ["./img/FIXME", "./audio/FIXME"],
+        K: ["./img/FIXME", "./audio/FIXME"],
+        L: ["./img/FIXME", "./audio/FIXME"],
+        M: ["./img/FIXME", "./audio/FIXME"],
+        N: ["./img/FIXME", "./audio/FIXME"],
+        O: ["./img/FIXME", "./audio/FIXME"],
+        P: ["./img/FIXME", "./audio/FIXME"],
+        Q: ["./img/FIXME", "./audio/FIXME"],
+        R: ["./img/FIXME", "./audio/FIXME"],
+        S: ["./img/FIXME", "./audio/FIXME"],
+        T: ["./img/FIXME", "./audio/FIXME"],
+        U: ["./img/FIXME", "./audio/FIXME"],
+        V: ["./img/FIXME", "./audio/FIXME"],
+        W: ["./img/FIXME", "./audio/FIXME"],
+        X: ["./img/FIXME", "./audio/FIXME"],
+        Y: ["./img/FIXME", "./audio/FIXME"],
+        Z: ["./img/FIXME", "./audio/FIXME"]
     }//end piano
 
+    orchestra: {
+        0: ["./img/batman_run.gif", "./audio/gameover.wav"],
+        1: ["./img/FIXME", "./audio/FIXME"],
+        2: ["./img/FIXME", "./audio/FIXME"],
+        3: ["./img/FIXME", "./audio/FIXME"],
+        4: ["./img/FIXME", "./audio/FIXME"],
+        5: ["./img/FIXME", "./audio/FIXME"],
+        6: ["./img/FIXME", "./audio/FIXME"],
+        7: ["./img/FIXME", "./audio/FIXME"],
+        8: ["./img/FIXME", "./audio/FIXME"],
+        9: ["./img/FIXME", "./audio/FIXME"],
+        A: ["./img/FIXME", "./audio/FIXME"],
+        B: ["./img/FIXME", "./audio/FIXME"],
+        C: ["./img/FIXME", "./audio/FIXME"],
+        D: ["./img/FIXME", "./audio/FIXME"],
+        E: ["./img/FIXME", "./audio/FIXME"],
+        F: ["./img/FIXME", "./audio/FIXME"],
+        G: ["./img/FIXME", "./audio/FIXME"],
+        H: ["./img/FIXME", "./audio/FIXME"],
+        I: ["./img/FIXME", "./audio/FIXME"],
+        J: ["./img/FIXME", "./audio/FIXME"],
+        K: ["./img/FIXME", "./audio/FIXME"],
+        L: ["./img/FIXME", "./audio/FIXME"],
+        M: ["./img/FIXME", "./audio/FIXME"],
+        N: ["./img/FIXME", "./audio/FIXME"],
+        O: ["./img/FIXME", "./audio/FIXME"],
+        P: ["./img/FIXME", "./audio/FIXME"],
+        Q: ["./img/FIXME", "./audio/FIXME"],
+        R: ["./img/FIXME", "./audio/FIXME"],
+        S: ["./img/FIXME", "./audio/FIXME"],
+        T: ["./img/FIXME", "./audio/FIXME"],
+        U: ["./img/FIXME", "./audio/FIXME"],
+        V: ["./img/FIXME", "./audio/FIXME"],
+        W: ["./img/FIXME", "./audio/FIXME"],
+        X: ["./img/FIXME", "./audio/FIXME"],
+        Y: ["./img/FIXME", "./audio/FIXME"],
+        Z: ["./img/FIXME", "./audio/FIXME"]
+    }//end orchestra
 
-    // orchestra: {
+    drum_kit = {
+        0: ["./img/batman_run.gif", "./audio/gameover.wav"],
+        1: ["./img/FIXME", "./audio/FIXME"],
+        2: ["./img/FIXME", "./audio/FIXME"],
+        3: ["./img/FIXME", "./audio/FIXME"],
+        4: ["./img/FIXME", "./audio/FIXME"],
+        5: ["./img/FIXME", "./audio/FIXME"],
+        6: ["./img/FIXME", "./audio/FIXME"],
+        7: ["./img/FIXME", "./audio/FIXME"],
+        8: ["./img/FIXME", "./audio/FIXME"],
+        9: ["./img/FIXME", "./audio/FIXME"],
+        A: ["./img/FIXME", "./audio/FIXME"],
+        B: ["./img/FIXME", "./audio/FIXME"],
+        C: ["./img/FIXME", "./audio/FIXME"],
+        D: ["./img/FIXME", "./audio/FIXME"],
+        E: ["./img/FIXME", "./audio/FIXME"],
+        F: ["./img/FIXME", "./audio/FIXME"],
+        G: ["./img/FIXME", "./audio/FIXME"],
+        H: ["./img/FIXME", "./audio/FIXME"],
+        I: ["./img/FIXME", "./audio/FIXME"],
+        J: ["./img/FIXME", "./audio/FIXME"],
+        K: ["./img/FIXME", "./audio/FIXME"],
+        L: ["./img/FIXME", "./audio/FIXME"],
+        M: ["./img/FIXME", "./audio/FIXME"],
+        N: ["./img/FIXME", "./audio/FIXME"],
+        O: ["./img/FIXME", "./audio/FIXME"],
+        P: ["./img/FIXME", "./audio/FIXME"],
+        Q: ["./img/FIXME", "./audio/FIXME"],
+        R: ["./img/FIXME", "./audio/FIXME"],
+        S: ["./img/FIXME", "./audio/FIXME"],
+        T: ["./img/FIXME", "./audio/FIXME"],
+        U: ["./img/FIXME", "./audio/FIXME"],
+        V: ["./img/FIXME", "./audio/FIXME"],
+        W: ["./img/FIXME", "./audio/FIXME"],
+        X: ["./img/FIXME", "./audio/FIXME"],
+        Y: ["./img/FIXME", "./audio/FIXME"],
+        Z: ["./img/FIXME", "./audio/FIXME"]
+    }//end drum_kit
 
 
 
 
-    // }
 
-
-
-}
+}//end master_dict
