@@ -29,7 +29,7 @@ IMAGE CREDITS:
 9: 
 A: 
 B: 
-C: 
+C: https://giphy.com/gifs/from-simple-created-r5FZ2HwsBe6Jy
 D: 
 E: 
 F: 
