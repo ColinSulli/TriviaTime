@@ -70,7 +70,8 @@ function create_image(image_src) {
         // maybe if the keypresses key index is divisible by a certain number?
     // animate_top_down(curr_img_id);
     //animate_bottom_up(curr_img_id);
-    animate_top_left_to_bottom_right(curr_img_id);
+    //animate_top_left_to_bottom_right(curr_img_id);
+    randomPopUp(curr_img_id);
 
 }//end create_image()
 
@@ -106,7 +107,7 @@ function animate_bottom_up(image_id) {
     this_img.css("left", starting_position + "px");
 
     // make image start at bottom of main screen
-    this_img.css("top", $("#main").height());
+    this_img.css("top", $("main").height());
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) - OBJECT_SPEED);
@@ -142,6 +143,25 @@ function animate_top_left_to_bottom_right(image_id) {
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
+}//end animate_bottom_up()
+
+function randomPopUp(image_id) {
+    var this_img = $('#' + image_id);
+    // randomly set horizontal position
+    var starting_positionW = 0; 
+    var starting_positionW = Math.random() * ($("#main").width() - this_img.width());
+    var starting_positionH = 0; 
+    var starting_positionH = Math.random() * ($("#main").height() - this_img.height());
+
+    // make image start somewhere
+    this_img.css("left", starting_positionW + "px");
+
+    // make image start somewhere
+    this_img.css("top",  starting_positionH + "px");
+
+    setTimeout(function() {
+        this_img.remove();
+    },500);
 }//end animate_bottom_up()
 
 
