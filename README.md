@@ -27,10 +27,10 @@ IMAGE CREDITS:
 7: 
 8: 
 9: 
-A: 
+A: https://giphy.com/stickers/transparency-overlay-ffmpeg-MxYQrB9jeGzza
 B: 
 C: https://giphy.com/gifs/from-simple-created-r5FZ2HwsBe6Jy
-D: 
+D: https://giphy.com/gifs/game-games-colors-bvngDHrVOGU92
 E: 
 F: 
 G: https://giphy.com/gifs/loop-infinite-geometry-3o7buaucmSsxQf1pZK
@@ -39,33 +39,24 @@ I:
 J: 
 K: 
 L: 
-M: 
+M: https://giphy.com/stickers/vincemckelvie-transparent-spinning-shape-qvYsKLc5zp1vO
 N: 
 O: 
 P: 
 Q: 
-R: 
+R: https://giphy.com/stickers/rad-uyHoPme2WwZG
 S: https://giphy.com/gifs/80s-style-LGXFROB3igTrq
-T: 
-U: 
+T: https://giphy.com/stickers/jump-e3DIj171EHmdW
+U: https://giphy.com/stickers/video-image-mlp-Y7fxyuxFXcSUE
 V: 
-W: 
+W: https://giphy.com/gifs/stare-blobs-JZYjTATZTkXFS
 X: 
-Y: 
-Z: 
+Y: https://giphy.com/stickers/no-sIC1iHWfaiMp2
+Z: https://giphy.com/stickers/grandma-11STxD0O4gunLO
 Keyboard: http://all-free-download.com/free-vector/download/keyboard-clip-art_10181.html
 Favicon: https://i.pinimg.com/736x/69/96/5c/69965c2849ec9b7148a5547ce6714735--printable-musical-notes-musical-notes-art.jpg
 Batman Running: https://giphy.com/gifs/cartoon-batman-running-12MhwQm8toOEp2
 
-blob.gif: https://giphy.com/gifs/stare-blobs-JZYjTATZTkXFS
-dots.gif: https://giphy.com/gifs/game-games-colors-bvngDHrVOGU92
-unicorn.gif: https://giphy.com/stickers/video-image-mlp-Y7fxyuxFXcSUE
-banana.gif: https://giphy.com/stickers/transparency-overlay-ffmpeg-MxYQrB9jeGzza
-metal_sphere.gif: https://giphy.com/stickers/vincemckelvie-transparent-spinning-shape-qvYsKLc5zp1vO
-radioactive: https://giphy.com/stickers/rad-uyHoPme2WwZG
-t_rex.gif: https://giphy.com/stickers/jump-e3DIj171EHmdW
-grandma.gif: https://giphy.com/stickers/grandma-11STxD0O4gunLO
-butterfly: https://giphy.com/stickers/no-sIC1iHWfaiMp2
 
 SOUND CREDITS: 
 0: 
