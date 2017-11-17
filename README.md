@@ -45,7 +45,7 @@ O:
 P: 
 Q: 
 R: 
-S: 
+S: https://giphy.com/gifs/80s-style-LGXFROB3igTrq
 T: 
 U: 
 V: 
