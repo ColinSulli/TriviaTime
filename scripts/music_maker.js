@@ -55,26 +55,29 @@ function create_image(image_src) {
     var curr_image_div = "<div id='" + curr_img_id + "' class='images'></div>";
     $('.main').append(curr_image_div);
     img_idx++;
-
+                                                                        // FIXME: use certain height for all?
     $("#" + curr_img_id).append("<img src='" + image_src + "' height='" + "100px" + "'/>")
 
 
-    animate_top_down(curr_img_id);
+    // FIXME: need some kind of switch here for the 8 animation functions, or just do random animations
+        // maybe if the keypresses key index is divisible by a certain number?
+    // animate_top_down(curr_img_id);
+    animate_bottom_up(curr_img_id);
 
 }//end create_image()
 
 
-// image_id should be passed as   var curAlien = $('#a-' + alienIdx);
+// image_id should be passed as something like: idx-99
 function animate_top_down(image_id) {
     var this_img = $('#' + image_id);
 
-    // set where image start horizontally
+    // randomly set horizontal position
     var starting_position = Math.random() * ($(".main").width() - this_img.width());
     this_img.css("left", starting_position + "px");
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) + OBJECT_SPEED);
-        // console.log("inside setInterval");
+        // console.log("inside setInterval, function is FIXME");
         // console.log("curr css top =", this_img.css('top'));
         // console.log("main height =", $('.main').height());
         // Check to see if the image has left the game/viewing window
@@ -86,10 +89,32 @@ function animate_top_down(image_id) {
 }//end animate_top_down()
 
 
-function exit() {
-    // stop all animations
+// image_id should be passed as something like: idx-99
+function animate_bottom_up(image_id) {
+    var this_img = $('#' + image_id);
 
-    // stop all sounds
+    // randomly set horizontal position
+    var starting_position = Math.random() * ($(".main").width() - this_img.width());
+    this_img.css("left", starting_position + "px");
+
+    // make image start at bottom of main screen
+    this_img.css("top", $(".main").height());
+
+    var img_animate = setInterval( function() {
+        this_img.css("top", parseInt(this_img.css('top')) - OBJECT_SPEED);
+        if (parseInt(this_img.css('top')) < 0) {
+            this_img.remove();
+            clearInterval(img_animate);
+        }//end if
+    }, OBJECT_REFRESH_RATE);
+}//end animate_bottom_up()
+
+
+function exit() {
+    // remove all images currently on screen
+    $(".images").remove();
+
+    // stop all sounds FIXME
 
     // show main screen again
     $("#start-screen").show();
