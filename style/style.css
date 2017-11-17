@@ -69,4 +69,12 @@ footer {
 /* Classes */
 .main {
     text-align: center;
+    height: 500px;
+    width: 100%;
+    text-align: center;
+
+}
+
+.images {
+    position: absolute;
 }
