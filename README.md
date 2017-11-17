@@ -31,7 +31,7 @@ A: https://giphy.com/stickers/transparency-overlay-ffmpeg-MxYQrB9jeGzza
 B: https://giphy.com/stickers/dance-happy-halloween-creepy-monster-burger-emotion-worms-alexandrelouvenaz-3o7aCZPOOY1GnK8exa
 C: https://giphy.com/gifs/from-simple-created-r5FZ2HwsBe6Jy
 D: https://giphy.com/gifs/game-games-colors-bvngDHrVOGU92
-E: 
+E: https://giphy.com/stickers/face-accessories-3ov9jRASM3LYRtL9M4
 F: https://giphy.com/stickers/killer-angel123-xUOxfm6eLU0l4xZ888
 G: https://giphy.com/gifs/loop-infinite-geometry-3o7buaucmSsxQf1pZK
 H: 
