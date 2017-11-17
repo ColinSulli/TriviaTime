@@ -17,16 +17,16 @@ FEATURES:
 
 
 IMAGE CREDITS: 
-0: 
+0: https://giphy.com/stickers/animatedtext-bathroom-transparent-happy-q22xX098bWU
 1: https://giphy.com/stickers/3o7aDfuOPVroMTRjig
-2: 
-3: 
-4: 
-5: 
-6: 
-7: 
-8: 
-9: 
+2: https://giphy.com/stickers/imoji-emoji-3ohze1vWrLXspWILja
+3: https://giphy.com/stickers/animatedtext-ok-transparent-gFrmO3kFGWbf2
+4: https://giphy.com/stickers/animatedtext-transparent-animatedtext-13Mxz8ytWoMlMc
+5: https://giphy.com/stickers/imoji-food-l0Iy8JprP3dSWEABq
+6: https://giphy.com/stickers/imoji-red-3og0IunL69bxZmwt0c
+7: https://giphy.com/stickers/emoji-emojis-3og0Iun2UYCjtK2zew
+8: https://giphy.com/stickers/imoji-emoji-3ohzdNtGtFRR8BiHEA
+9: https://giphy.com/stickers/3o7aDcJuup7uQIdtzW
 A: https://giphy.com/stickers/transparency-overlay-ffmpeg-MxYQrB9jeGzza
 B: https://giphy.com/stickers/dance-happy-halloween-creepy-monster-burger-emotion-worms-alexandrelouvenaz-3o7aCZPOOY1GnK8exa
 C: https://giphy.com/gifs/from-simple-created-r5FZ2HwsBe6Jy
