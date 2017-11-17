@@ -14,8 +14,8 @@ div {
     
 }
 
-#main_row {
-    height: 50vh;
+.row {
+    align-content: center;
 }
 
 footer {
