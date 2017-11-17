@@ -1,7 +1,21 @@
 /* Generic HTML Tags */
+body {
+	font-family: azaura;
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
 p {
     font-weight: bold;
+}
 
+div {
+    
+}
+
+#main_row {
+    height: 50vh;
 }
 
 footer {
@@ -16,14 +30,43 @@ footer {
 }
 
 /* Sidebar Items */
+.col-md-2 {
+    height: 100%;
+}
 
+#drum_kit {
+    border: 1px solid black;
+    color: black;
+    background: yellow;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+    height: 33%;
+}
+
+#techno {
+    border: 1px solid black;
+    color: black;
+    background: green;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+    height: 33%;
+}
+
+#piano {
+    border: 1px solid black;
+    color: black;
+    background: red;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+    height: 33%;
+}
 
 
 
 /* Classes */
 .main {
-    height: 100%;
-    width: 100%;
     text-align: center;
-
 }
