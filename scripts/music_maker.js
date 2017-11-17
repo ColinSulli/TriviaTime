@@ -71,7 +71,10 @@ function create_image(image_src) {
     // animate_top_down(curr_img_id);
     //animate_bottom_up(curr_img_id);
     //animate_top_left_to_bottom_right(curr_img_id);
-    randomPopUp(curr_img_id);
+    //randomPopUp(curr_img_id);
+    //animate_top_right_to_bottom_left(curr_img_id);
+    //animate_bottom_right_to_top_left(curr_img_id);
+    animate_bottom_left_to_top_right(curr_img_id);
 
 }//end create_image()
 
@@ -125,7 +128,7 @@ function animate_top_left_to_bottom_right(image_id) {
     // randomly set horizontal position
     var starting_position = 0; 
 
-    // make image start 150 px left of edge of screen
+    // make image start at left
     this_img.css("left", 0 + "px");
 
     // make image start in topmost part of screen
@@ -139,6 +142,31 @@ function animate_top_left_to_bottom_right(image_id) {
             clearInterval(img_animate);
         }//end if
         if (parseInt(this_img.css('left')) > $("#main").width()) {
+            this_img.remove();
+            clearInterval(img_animate);
+        }//end if
+    }, OBJECT_REFRESH_RATE);
+}//end animate_bottom_up()
+
+// image_id should be passed as something like: idx-99
+function animate_top_right_to_bottom_left(image_id) {
+    var this_img = $('#' + image_id);
+
+    // make image start at right
+    this_img.css("right", 0 + "px");
+
+    // make image start in topmost part of screen
+    this_img.css("top", 0+"px");
+
+    var img_animate = setInterval( function() {
+        this_img.css("top", parseInt(this_img.css('top')) + 0.6*OBJECT_SPEED);
+        this_img.css("right", parseInt(this_img.css('right')) + OBJECT_SPEED);
+        if (parseInt(this_img.css('top')) < 0) {
+            this_img.remove();
+            clearInterval(img_animate);
+        }//end if
+        console.log(parseInt(this_img.css('right')));
+        if (parseInt(this_img.css('right')) > $("#main").width()) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -162,6 +190,58 @@ function randomPopUp(image_id) {
     setTimeout(function() {
         this_img.remove();
     },500);
+}//end animate_bottom_up()
+
+// image_id should be passed as something like: idx-99
+function animate_bottom_right_to_top_left(image_id) {
+    var this_img = $('#' + image_id);
+
+    // make image start at right
+    this_img.css("right", 0 + "px");
+
+    // make image start in topmost part of screen
+    this_img.css("bottom", 0+"px");
+
+    var img_animate = setInterval( function() {
+        this_img.css("bottom", parseInt(this_img.css('bottom')) + 0.6*OBJECT_SPEED);
+        this_img.css("right", parseInt(this_img.css('right')) + OBJECT_SPEED);
+        if (parseInt(this_img.css('bottom')) > $("#main").height()) {
+            this_img.remove();
+            clearInterval(img_animate);
+        }//end if
+        console.log(parseInt(this_img.css('right')));
+        if (parseInt(this_img.css('right')) > $("#main").width()) {
+            this_img.remove();
+            clearInterval(img_animate);
+        }//end if
+    }, OBJECT_REFRESH_RATE);
+}//end animate_bottom_up()
+
+// image_id should be passed as something like: idx-99
+function animate_bottom_left_to_top_right(image_id) {
+    var this_img = $('#' + image_id);
+
+    // randomly set horizontal position
+    var starting_position = 0; 
+
+    // make image start at left
+    this_img.css("left", 0 + "px");
+
+    // make image start in topmost part of screen
+    this_img.css("bottom", 0+"px");
+
+    var img_animate = setInterval( function() {
+        this_img.css("bottom", parseInt(this_img.css('bottom')) + 0.6*OBJECT_SPEED);
+        this_img.css("left", parseInt(this_img.css('left')) + OBJECT_SPEED);
+        if (parseInt(this_img.css('bottom')) > $("#main").height()) {
+            this_img.remove();
+            clearInterval(img_animate);
+        }//end if
+        if (parseInt(this_img.css('left')) > $("#main").width()) {
+            this_img.remove();
+            clearInterval(img_animate);
+        }//end if
+    }, OBJECT_REFRESH_RATE);
 }//end animate_bottom_up()
 
 
