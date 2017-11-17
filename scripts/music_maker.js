@@ -8,7 +8,7 @@ var OBJECT_SPEED = 5;           // pixels per ms
 var OBJECT_REFRESH_RATE = 50;   // ms
 
 var state = "initial";          // options: "initial" or "running"
-var mode  = "piano";            //FIXME
+var mode  = "piano";            // options: "drum_kit", "orchestra", "piano", "FIXME"
 
 
 
@@ -42,8 +42,9 @@ function keydownRouter(e) {
     }//end if
 
     console.log("key   =", keypressed);
-    console.log("image =", master_dict[mode][keypressed][0]);
-    create_image(master_dict[mode][keypressed][0]);
+    console.log("image =", master_dict["images"][keypressed]);
+    console.log("tone  =", master_dict[mode][keypressed]);
+    create_image(master_dict["images"][keypressed]);
     // master_dict[mode][keypressed][1].play();
 
 }//end keydownRouter()
