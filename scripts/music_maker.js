@@ -27,6 +27,13 @@ $(document).ready( function() {
 
 function keydownRouter(e) {
     console.log("You hit the " + String.fromCharCode(e.which) + " key; index = " + e.which);
+    var keypressed = KEYS[e.which];
+
+    // make sure they pressed a key in KEYS dictionary
+    if (!(e.which in KEYS)) {
+        console.log(e.which, "is not a key in the KEYS dictionary");
+        return;
+    }//end if
 
     // transition from Start screen to Interactive one on first keypress
     if (state === "initial") {
@@ -35,7 +42,6 @@ function keydownRouter(e) {
         state = "running";
     }//end if
 
-    var keypressed = KEYS[e.which];
     if (keypressed === "escape") {
         exit();
         return;
@@ -44,8 +50,9 @@ function keydownRouter(e) {
     console.log("key   =", keypressed);
     console.log("image =", master_dict["images"][keypressed]);
     console.log("tone  =", master_dict[mode][keypressed]);
+    
     create_image(master_dict["images"][keypressed]);
-    // master_dict[mode][keypressed][1].play();
+    // master_dict[mode][keypressed].play();
 
 }//end keydownRouter()
 
