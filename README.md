@@ -17,32 +17,32 @@ FEATURES:
 
 
 IMAGE CREDITS: 
-0: 
-1: 
-2: 
-3: 
-4: 
-5: 
-6: 
-7: 
-8: 
-9: 
+0: https://giphy.com/stickers/animatedtext-bathroom-transparent-happy-q22xX098bWU
+1: https://giphy.com/stickers/3o7aDfuOPVroMTRjig
+2: https://giphy.com/stickers/imoji-emoji-3ohze1vWrLXspWILja
+3: https://giphy.com/stickers/animatedtext-ok-transparent-gFrmO3kFGWbf2
+4: https://giphy.com/stickers/animatedtext-transparent-animatedtext-13Mxz8ytWoMlMc
+5: https://giphy.com/stickers/imoji-food-l0Iy8JprP3dSWEABq
+6: https://giphy.com/stickers/imoji-red-3og0IunL69bxZmwt0c
+7: https://giphy.com/stickers/emoji-emojis-3og0Iun2UYCjtK2zew
+8: https://giphy.com/stickers/imoji-emoji-3ohzdNtGtFRR8BiHEA
+9: https://giphy.com/stickers/3o7aDcJuup7uQIdtzW
 A: https://giphy.com/stickers/transparency-overlay-ffmpeg-MxYQrB9jeGzza
-B: 
+B: https://giphy.com/stickers/dance-happy-halloween-creepy-monster-burger-emotion-worms-alexandrelouvenaz-3o7aCZPOOY1GnK8exa
 C: https://giphy.com/gifs/from-simple-created-r5FZ2HwsBe6Jy
 D: https://giphy.com/gifs/game-games-colors-bvngDHrVOGU92
 E: 
-F: 
+F: https://giphy.com/stickers/killer-angel123-xUOxfm6eLU0l4xZ888
 G: https://giphy.com/gifs/loop-infinite-geometry-3o7buaucmSsxQf1pZK
 H: https://giphy.com/stickers/halloween-excited-3o7aCQi2ZBq46pjkek
-I: 
+I: https://giphy.com/gifs/animated-shapes-trippy-6rdwRegqbDczu
 J: https://giphy.com/stickers/3ov9k9Y2tlz5HzILxm
 K: https://giphy.com/stickers/heyduggee-httpwwwheyduggeecom-l378B5epw44KaWFhK
 L: https://giphy.com/stickers/wetransfer-sticker-3ohhwMDyS6rv3sB8yI
 M: https://giphy.com/stickers/vincemckelvie-transparent-spinning-shape-qvYsKLc5zp1vO
 N: https://giphy.com/stickers/school-tech-3ov9jQiFcWPPxICjFm
 O: https://giphy.com/stickers/happy-halloween-3ohhwFnB8xXM25p3BS
-P: 
+P: https://giphy.com/stickers/imoji-emoji-3og0IFkOheinrXbL2g
 Q: https://giphy.com/stickers/happy-smile-3ov9jWGJCEPV52RTiM
 R: https://giphy.com/stickers/rad-uyHoPme2WwZG
 S: https://giphy.com/gifs/80s-style-LGXFROB3igTrq
