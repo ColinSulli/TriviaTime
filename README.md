@@ -18,7 +18,7 @@ FEATURES:
 
 IMAGE CREDITS: 
 0: 
-1: 
+1: https://giphy.com/stickers/3o7aDfuOPVroMTRjig
 2: 
 3: 
 4: 
@@ -28,21 +28,21 @@ IMAGE CREDITS:
 8: 
 9: 
 A: 
-B: 
+B: https://giphy.com/stickers/dance-happy-halloween-creepy-monster-burger-emotion-worms-alexandrelouvenaz-3o7aCZPOOY1GnK8exa
 C: https://giphy.com/gifs/from-simple-created-r5FZ2HwsBe6Jy
 D: 
 E: 
-F: 
+F: https://giphy.com/stickers/killer-angel123-xUOxfm6eLU0l4xZ888
 G: https://giphy.com/gifs/loop-infinite-geometry-3o7buaucmSsxQf1pZK
 H: 
-I: 
+I: https://giphy.com/gifs/animated-shapes-trippy-6rdwRegqbDczu
 J: 
 K: 
 L: 
 M: 
 N: 
 O: 
-P: 
+P: https://giphy.com/stickers/imoji-emoji-3og0IFkOheinrXbL2g
 Q: 
 R: 
 S: https://giphy.com/gifs/80s-style-LGXFROB3igTrq
