@@ -11,7 +11,16 @@ var state = "initial";          // options: "initial" or "running"
 var mode  = "piano";            // options: "drum_kit", "orchestra", "piano", "FIXME"
 
 
-// var animations = [];
+var animations = [  animate_top_down,
+                    animate_bottom_up,
+                    animate_left_right,
+                    animate_right_left,
+                    random_pop_up,
+                    animate_top_left_to_bottom_right,
+                    animate_top_right_to_bottom_left,
+                    animate_bottom_right_to_top_left,
+                    animate_bottom_left_to_top_right
+                 ];
 
 
 // ==================== MAIN CODE ==================== //
@@ -20,14 +29,14 @@ $(document).ready( function() {
     console.log("Ready!");
 
     // event handlers
-    $(window).keydown(keydownRouter);
+    $(window).keydown(keydown_router);
 
 
 });//end document.ready()
 
 // ==================== CALLBACK FUNCTIONS ==================== //
 
-function keydownRouter(e) {
+function keydown_router(e) {
     console.log("You hit the " + String.fromCharCode(e.which) + " key; index = " + e.which);
     var keypressed = KEYS[e.which];
 
@@ -56,7 +65,7 @@ function keydownRouter(e) {
     create_image(master_dict["images"][keypressed]);
     // master_dict[mode][keypressed].play();
 
-}//end keydownRouter()
+}//end keydown_router()
 
 
 function create_image(image_src) {
@@ -64,20 +73,13 @@ function create_image(image_src) {
     var curr_image_div = "<div id='" + curr_img_id + "' class='images'></div>";
     $('#main').append(curr_image_div);
     img_idx++;
-                                                                        // FIXME: use certain height for all?
+
     $("#" + curr_img_id).append("<img src='" + image_src + "' height='" + "100px" + "'/>")
 
-
-    // FIXME: need some kind of switch here for the 8 animation functions, or just do random animations
-        // maybe if the keypresses key index is divisible by a certain number?
-    // animate_top_down(curr_img_id);
-    //animate_bottom_up(curr_img_id);
-    //animate_top_left_to_bottom_right(curr_img_id);
-    //randomPopUp(curr_img_id);
-    //animate_top_right_to_bottom_left(curr_img_id);
-    //animate_bottom_right_to_top_left(curr_img_id);
-    animate_bottom_left_to_top_right(curr_img_id);
-
+    // randomly animate image
+    var random_animation_func = get_random_num(0, animations.length);
+    var this_animation = animations[random_animation_func];
+    this_animation(curr_img_id);
 }//end create_image()
 
 
@@ -114,13 +116,55 @@ function animate_bottom_up(image_id) {
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) - OBJECT_SPEED);
-        
+
         if (parseInt(this_img.css('top')) < 0) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
 }//end animate_bottom_up()
+
+
+// image_id should be passed as something like: idx-99
+function animate_left_right(image_id) {
+    var this_img = $('#' + image_id);
+
+    // randomly set vertical position
+    var starting_position = Math.random() * ($("#main").height() - this_img.height());
+    this_img.css("top", starting_position + "px");
+
+    var img_animate = setInterval( function() {
+        this_img.css("left", parseInt(this_img.css("left")) + OBJECT_SPEED);
+
+        // Check to see if the image has left the main window
+        if (parseInt(this_img.css('left')) > ($('#main').width() - this_img.width())) {
+            this_img.remove();
+            clearInterval(img_animate);
+        }//end if
+    }, OBJECT_REFRESH_RATE);
+}//end animate_left_right()
+
+
+// image_id should be passed as something like: idx-99
+function animate_right_left(image_id) {
+    var this_img = $('#' + image_id);
+
+    // randomly set vertical position
+    var starting_position = Math.random() * ($("#main").height() - this_img.height());
+    this_img.css("top", starting_position + "px");
+
+    this_img.css("right", "0px");
+
+    var img_animate = setInterval( function() {
+        this_img.css("right", parseInt(this_img.css("right")) + OBJECT_SPEED);
+
+        // Check to see if the image has left the main window
+        if (parseInt(this_img.css("right")) > ($('#main').width() - this_img.width())) {
+            this_img.remove();
+            clearInterval(img_animate);
+        }//end if
+    }, OBJECT_REFRESH_RATE);
+}//end animate_right_left()
 
 
 // image_id should be passed as something like: idx-99
@@ -140,7 +184,7 @@ function animate_top_left_to_bottom_right(image_id) {
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
-}//end animate_bottom_up()
+}//end animate_top_left_to_bottom_right()
 
 
 // image_id should be passed as something like: idx-99
@@ -160,10 +204,10 @@ function animate_top_right_to_bottom_left(image_id) {
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
-}//end animate_bottom_up()
+}//end animate_top_right_to_bottom_left()
 
 
-function randomPopUp(image_id) {
+function random_pop_up(image_id) {
     var this_img = $('#' + image_id);
 
     // randomly set location
@@ -175,8 +219,8 @@ function randomPopUp(image_id) {
 
     setTimeout(function() {
         this_img.remove();
-    }, 500);
-}//end animate_bottom_up()
+    }, 800);
+}//end random_pop_up()
 
 
 // image_id should be passed as something like: idx-99
@@ -196,7 +240,7 @@ function animate_bottom_right_to_top_left(image_id) {
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
-}//end animate_bottom_up()
+}//end animate_bottom_right_to_top_left()
 
 
 // image_id should be passed as something like: idx-99
@@ -216,7 +260,7 @@ function animate_bottom_left_to_top_right(image_id) {
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
-}//end animate_bottom_up()
+}//end animate_bottom_left_to_top_right()
 
 
 function exit() {
