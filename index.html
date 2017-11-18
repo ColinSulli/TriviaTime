@@ -10,12 +10,6 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    
-    <!-- JAVASCRIPT FILES -->
-    <script src="scripts/jquery.min.js"></script>
-    <script src="scripts/keys.js"></script>
-    <script src="scripts/master_dict.js"></script>
-    <script src="scripts/music_maker.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -23,6 +17,7 @@
     <!-- JAVASCRIPT FILES -->
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/keys.js"></script>
+    <script src="scripts/master_dict.js"></script>
     <script src="scripts/music_maker.js"></script>
 
     <!-- FAVICON -->
@@ -51,28 +46,20 @@
 <!-- HTML -->
 <body>
         <div class="row" id="header">
-            <h1>Music Maker</h1>
-            <p>Press any alphanumeric key to start</p>
-            <!-- FIXME: can add cool logo or icon instead of just text -->
+            <div class="col-xs-3" id="title">
+                <h1>Music Maker</h1>
+            </div>
+            
+            <div class="col-xs-9" id="genre_selector">
+                    <h4 id="drum_kit">DRUM KIT</h4>
+                    <h4 id="techno">TECHNO</h4>
+                    <h4 id="piano">PIANO</h4>
+            </div>
         </div>
             
 		<div id="body">
                 
-            <div class="col-md-2" id="genre_selector" >
-                <div id="drum_kit" class="row">
-                    <p>DRUM KIT</p>
-                </div>
-                <div id="techno" class="row">
-                    <p>TECHNO</p>
-                </div>
-                <div id="piano" class="row">
-                    <p>PIANO</p>
-                </div>
-            </div>                
-
-            <div id="main" class="col-md-10">
-                
-            </div>
+            <p>Press any alphanumeric key to start</p>
             
         </div> 
 
