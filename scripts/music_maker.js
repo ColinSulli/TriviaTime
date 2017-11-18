@@ -11,6 +11,8 @@ var state = "initial";          // options: "initial" or "running"
 var mode  = "piano";            // options: "drum_kit", "orchestra", "piano", "FIXME"
 
 
+// var animations = [];
+
 
 // ==================== MAIN CODE ==================== //
 
@@ -89,10 +91,8 @@ function animate_top_down(image_id) {
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) + OBJECT_SPEED);
-        // console.log("inside setInterval, function is FIXME");
-        // console.log("curr css top =", this_img.css('top'));
-        // console.log("main height =", $('.main').height());
-        // Check to see if the image has left the game/viewing window
+
+        // Check to see if the image has left the main window
         if (parseInt(this_img.css('top')) > ($('#main').height() - this_img.height())) {
             this_img.remove();
             clearInterval(img_animate);
@@ -114,130 +114,104 @@ function animate_bottom_up(image_id) {
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) - OBJECT_SPEED);
+        
         if (parseInt(this_img.css('top')) < 0) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
 }//end animate_bottom_up()
+
 
 // image_id should be passed as something like: idx-99
 function animate_top_left_to_bottom_right(image_id) {
     var this_img = $('#' + image_id);
 
-    // randomly set horizontal position
-    var starting_position = 0; 
-
-    // make image start at left
-    this_img.css("left", 0 + "px");
-
-    // make image start in topmost part of screen
-    this_img.css("top", 0+"px");
+    // make image start at top left
+    this_img.css("left", "0px");
+    this_img.css("top", "0px");
 
     var img_animate = setInterval( function() {
-        this_img.css("top", parseInt(this_img.css('top')) + 0.6*OBJECT_SPEED);
+        this_img.css("top", parseInt(this_img.css('top')) + 0.6 * OBJECT_SPEED);
         this_img.css("left", parseInt(this_img.css('left')) + OBJECT_SPEED);
-        if (parseInt(this_img.css('top')) < 0) {
-            this_img.remove();
-            clearInterval(img_animate);
-        }//end if
-        if (parseInt(this_img.css('left')) > $("#main").width()) {
+
+        if ((parseInt(this_img.css('top')) < 0) || (parseInt(this_img.css('left')) > $("#main").width())) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
 }//end animate_bottom_up()
+
 
 // image_id should be passed as something like: idx-99
 function animate_top_right_to_bottom_left(image_id) {
     var this_img = $('#' + image_id);
 
-    // make image start at right
-    this_img.css("right", 0 + "px");
-
-    // make image start in topmost part of screen
-    this_img.css("top", 0+"px");
+    // make image start at top right
+    this_img.css("right", "0px");
+    this_img.css("top", "0px");
 
     var img_animate = setInterval( function() {
-        this_img.css("top", parseInt(this_img.css('top')) + 0.6*OBJECT_SPEED);
+        this_img.css("top", parseInt(this_img.css('top')) + 0.6 * OBJECT_SPEED);
         this_img.css("right", parseInt(this_img.css('right')) + OBJECT_SPEED);
-        if (parseInt(this_img.css('top')) < 0) {
-            this_img.remove();
-            clearInterval(img_animate);
-        }//end if
-        console.log(parseInt(this_img.css('right')));
-        if (parseInt(this_img.css('right')) > $("#main").width()) {
+
+        if ((parseInt(this_img.css('top')) < 0) || (parseInt(this_img.css('right')) > $("#main").width())) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
 }//end animate_bottom_up()
 
+
 function randomPopUp(image_id) {
     var this_img = $('#' + image_id);
-    // randomly set horizontal position
-    var starting_positionW = 0; 
+
+    // randomly set location
     var starting_positionW = Math.random() * ($("#main").width() - this_img.width());
-    var starting_positionH = 0; 
     var starting_positionH = Math.random() * ($("#main").height() - this_img.height());
 
-    // make image start somewhere
     this_img.css("left", starting_positionW + "px");
-
-    // make image start somewhere
     this_img.css("top",  starting_positionH + "px");
 
     setTimeout(function() {
         this_img.remove();
-    },500);
+    }, 500);
 }//end animate_bottom_up()
+
 
 // image_id should be passed as something like: idx-99
 function animate_bottom_right_to_top_left(image_id) {
     var this_img = $('#' + image_id);
 
-    // make image start at right
-    this_img.css("right", 0 + "px");
-
-    // make image start in topmost part of screen
-    this_img.css("bottom", 0+"px");
+    // make image start at bottom right
+    this_img.css("right", "0px");
+    this_img.css("bottom", "0px");
 
     var img_animate = setInterval( function() {
-        this_img.css("bottom", parseInt(this_img.css('bottom')) + 0.6*OBJECT_SPEED);
+        this_img.css("bottom", parseInt(this_img.css('bottom')) + 0.6 * OBJECT_SPEED);
         this_img.css("right", parseInt(this_img.css('right')) + OBJECT_SPEED);
-        if (parseInt(this_img.css('bottom')) > $("#main").height()) {
-            this_img.remove();
-            clearInterval(img_animate);
-        }//end if
-        console.log(parseInt(this_img.css('right')));
-        if (parseInt(this_img.css('right')) > $("#main").width()) {
+
+        if ((parseInt(this_img.css('bottom')) > $("#main").height()) || (parseInt(this_img.css('right')) > $("#main").width()))  {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
     }, OBJECT_REFRESH_RATE);
 }//end animate_bottom_up()
 
+
 // image_id should be passed as something like: idx-99
 function animate_bottom_left_to_top_right(image_id) {
     var this_img = $('#' + image_id);
 
-    // randomly set horizontal position
-    var starting_position = 0; 
-
-    // make image start at left
-    this_img.css("left", 0 + "px");
-
-    // make image start in topmost part of screen
-    this_img.css("bottom", 0+"px");
+    // make image start at bottom left
+    this_img.css("left", "0px");
+    this_img.css("bottom", "0px");
 
     var img_animate = setInterval( function() {
-        this_img.css("bottom", parseInt(this_img.css('bottom')) + 0.6*OBJECT_SPEED);
+        this_img.css("bottom", parseInt(this_img.css('bottom')) + 0.6 * OBJECT_SPEED);
         this_img.css("left", parseInt(this_img.css('left')) + OBJECT_SPEED);
-        if (parseInt(this_img.css('bottom')) > $("#main").height()) {
-            this_img.remove();
-            clearInterval(img_animate);
-        }//end if
-        if (parseInt(this_img.css('left')) > $("#main").width()) {
+
+        if ((parseInt(this_img.css('bottom')) > $("#main").height()) || (parseInt(this_img.css('left')) > $("#main").width())) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
