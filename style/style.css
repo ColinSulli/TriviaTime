@@ -1,21 +1,13 @@
 /* Generic HTML Tags */
 body {
 	font-family: azaura;
-	margin:0;
-	padding:0;
-	height:100%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
 
 p {
     font-weight: bold;
-}
-
-div {
-    
-}
-
-.row {
-    align-content: center;
 }
 
 footer {
@@ -29,49 +21,59 @@ footer {
     visibility: hidden;          /* Default: show only during interactive mode */
 }
 
-/* Sidebar Items */
+/* MENU BAR ITEMS */
+.row {
+    align-content: center;
+}
+
 .col-md-2 {
     height: 100%;
 }
 
-#drum_kit {
+.col-xs-3 {
     border: 1px solid black;
     color: black;
-    background: yellow;
     padding-bottom: 20px;
     padding-top: 20px;
     font-size: 18px;
+    text-align: center;
     height: 33%;
+}
+
+#title {
+    border: none;
+    padding-top: 5px;
+    height: 45px;
+    left: 0px;
+    top: 0px;
+}
+
+#random {
+    background: blue;
+}
+
+#drum_kit {
+    background: yellow;
 }
 
 #techno {
-    border: 1px solid black;
-    color: black;
     background: green;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    font-size: 18px;
-    height: 33%;
 }
 
 #piano {
-    border: 1px solid black;
-    color: black;
     background: red;
-    padding-top: 20px;
-    font-size: 18px;
-    height: 33%;
 }
 
 
-
-/* Classes */
+/* MAIN SCREEN ITEMS */
 #main {
-    text-align: center;
     height: 500px;
+    line-height: 500px;
     width: 100%;
+    font-size: 24px;
     text-align: center;
-
+    vertical-align: middle;
+    border: 1px solid red;
 }
 
 .images {

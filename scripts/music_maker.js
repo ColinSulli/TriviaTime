@@ -48,7 +48,7 @@ function keydown_router(e) {
 
     // transition from Start screen to Interactive one on first keypress
     if (state === "initial") {
-        $("#start-screen").hide();
+        $("#instructions").hide();
         $("footer").css("visibility", "visible");
         state = "running";
     }//end if
@@ -270,7 +270,7 @@ function exit() {
     // stop all sounds FIXME
 
     // show main screen again
-    $("#start-screen").show();
+    $("#instructions").show();
     $("footer").css("visibility", "hidden");
 
     state = "initial";

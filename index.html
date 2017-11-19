@@ -2,72 +2,75 @@
 <html>
 
 <head>
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="style/style.css">
-    
-    <!-- JQuery -->
-    <script src="scripts/jquery.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  
+  <!-- JQuery -->
+  <script src="scripts/jquery.min.js"></script>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
-    <!-- JAVASCRIPT FILES -->
-    <script src="scripts/keys.js"></script>
-    <script src="scripts/master_dict.js"></script>
-    <script src="scripts/music_maker.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  <!-- OUR JAVASCRIPT FILES -->
+  <script src="scripts/keys.js"></script>
+  <script src="scripts/master_dict.js"></script>
+  <script src="scripts/music_maker.js"></script>
 
-    <!-- FAVICON -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-
-    <!-- AUDIO -->
-    <audio preload="auto">
-    <!-- <source src="./audio/FIXME.mp3"></source> -->
-    </audio>
-    
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  
   <!-- AUDIO -->
-<!--
+  <!--
   <audio preload="auto">
     <source src="./audio/gameover.wav"></source>
   </audio>
--->
+  -->
 
-    <title>493 Music Maker</title>
+  <title>493 Music Maker</title>
 
-    <meta charset="UTF-8">
-    <meta name="description" content="EECS 493 Final Project">
-    <meta name="keywords" content="HTML, CSS, Bootstrap, JavaScript, JQuery">
-    <meta name="authors" content="Aklavya Kashyap, David Horsfield, Jason Pinho, Shayan Shafii">
+  <meta charset="UTF-8">
+  <meta name="description" content="EECS 493 Final Project">
+  <meta name="keywords" content="HTML, CSS, Bootstrap, JavaScript, JQuery">
+  <meta name="authors" content="Aklavya Kashyap, David Horsfield, Jason Pinho, Shayan Shafii">
 </head>
 
 <!-- HTML -->
 <body>
-        <div class="row" id="header">
-            <div class="col-xs-3" id="title">
-                <h1>Music Maker</h1>
-            </div>
-            
-            <div class="col-xs-9" id="genre_selector">
-                    <h4 id="drum_kit">DRUM KIT</h4>
-                    <h4 id="techno">TECHNO</h4>
-                    <h4 id="piano">PIANO</h4>
-            </div>
-        </div>
-            
-		<div id="main">
-                
-            <p>Press any alphanumeric key to start</p>
-            
-        </div> 
+  <div class="row" id="header">
 
-    <!-- END MAIN SCREEN -->
+    <div class="col-xs-3" id="title">
+      <img src="./img/Music_Maker.png">
+    </div>
+
+    <div class="col-xs-9" id="genre_selector">
+      <div class="col-xs-3" id="random">
+        <h4>RANDOM</h4>
+      </div>
+      <div class="col-xs-3" id="drum_kit">
+        <h4>DRUM KIT</h4>
+      </div>
+      <div class="col-xs-3" id="techno">
+        <h4>TECHNO</h4>
+      </div>
+      <div class="col-xs-3" id="piano">
+        <h4>PIANO</h4>
+      </div>
+    </div>
+
+  </div> <!-- end header -->
+
+  <div id="main">         
+    <p id="instructions">Press any alphanumeric key to start</p>    
+  </div> 
 
 </body>
+
 <footer>Hit the [Esc] key to exit</footer>
 
 </html>
