@@ -53,9 +53,11 @@ W: https://giphy.com/gifs/stare-blobs-JZYjTATZTkXFS
 X: https://giphy.com/stickers/cute-fun-xUOxf9qA9iupNWfT3y
 Y: https://giphy.com/stickers/no-sIC1iHWfaiMp2
 Z: https://giphy.com/stickers/grandma-11STxD0O4gunLO
-Keyboard: http://all-free-download.com/free-vector/download/keyboard-clip-art_10181.html
-Favicon: https://i.pinimg.com/736x/69/96/5c/69965c2849ec9b7148a5547ce6714735--printable-musical-notes-musical-notes-art.jpg
-Batman Running: https://giphy.com/gifs/cartoon-batman-running-12MhwQm8toOEp2
+keyboard.jpg: http://all-free-download.com/free-vector/download/keyboard-clip-art_10181.html
+computer_piano_keyboard: https://schoolofsynthesis.com/sites/default/files/styles/blog_600_300/public/SOS_KeyboardPiano_FA-01.jpg?itok=m6JlbxxM
+Music_Maker.png: http://clipart-library.com/clipart/8TxrGebyc.htm
+Favicon.ico: https://i.pinimg.com/736x/69/96/5c/69965c2849ec9b7148a5547ce6714735--printable-musical-notes-musical-notes-art.jpg
+batman_run.gif: https://giphy.com/gifs/cartoon-batman-running-12MhwQm8toOEp2
 
 
 SOUND CREDITS: 
