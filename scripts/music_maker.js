@@ -64,11 +64,9 @@ function keydown_router(e) {
         return;
     }//end if
 
-    console.log("key   =", keypressed);
-    console.log("image =", master_dict["images"][keypressed]);
-    console.log("tone  =", master_dict[mode][keypressed]);
-    
     create_image(master_dict["images"][keypressed]);
+
+    console.log("tone should be =", master_dict[mode][keypressed]);
     // master_dict[mode][keypressed].play();
 
 }//end keydown_router()
@@ -77,7 +75,7 @@ function keydown_router(e) {
 function update_queue(keypressed) {
     prev_keys_queue.push(keypressed);
 
-    // only store previous 25
+    // only store previous 25 keys
     if (prev_keys_queue.length > 25) {
         var remove = prev_keys_queue.shift();
     }//end if
