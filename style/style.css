@@ -31,13 +31,17 @@ footer {
 }
 
 .col-xs-2 {
-    color: black;
     padding-bottom: 20px;
     padding-top: 20px;
     font-size: 18px;
+    height: 33%;
+}
+
+.genre_selector {
+    color: black;
+    cursor: pointer;
     font-weight: medium;
     text-align: center;
-    height: 33%;
 }
 
 #title {
