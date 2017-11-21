@@ -48,23 +48,28 @@ footer {
 }
 
 #random {
-    border: 1px solid black;
+    border: 5px solid yellow;   /* Random is default mode*/
     background: blue;
 }
 
 #drum_kit {
-    border: 1px solid black;
+    border: 2px solid black;
     background: orange;
 }
 
 #techno {
-    border: 1px solid black;
+    border: 2px solid black;
     background: green;
 }
 
 #piano {
-    border: 1px solid black;
+    border: 2px solid black;
     background: red;
+}
+
+#tutorial {
+    border: 2px solid black;
+    background: purple;
 }
 
 
@@ -81,4 +86,12 @@ footer {
 
 .images {
     position: absolute;
+}
+
+#prev_keys {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    line-height: 20px;
+    vertical-align: bottom;
 }

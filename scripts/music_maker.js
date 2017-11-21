@@ -8,8 +8,8 @@ var OBJECT_SPEED = 5;           // pixels per ms
 var OBJECT_REFRESH_RATE = 50;   // ms
 
 var state = "initial";          // options: "initial" or "running"
-var mode  = "piano";            // options: "drum_kit", "orchestra", "piano", "FIXME"
-
+var mode  = "random";           // options: "random", drum_kit", "orchestra", "piano", "FIXME"
+var prev_keys_queue = [];
 
 var animations = [  animate_top_down,
                     animate_bottom_up,
@@ -28,7 +28,6 @@ var animations = [  animate_top_down,
 $(document).ready( function() {
     console.log("Ready!");
 
-    // event handlers
     $("#random").click(change_mode);
     $("#drum_kit").click(change_mode);
     $("#techno").click(change_mode);
@@ -42,8 +41,9 @@ $(document).ready( function() {
 // ==================== CALLBACK FUNCTIONS ==================== //
 
 function keydown_router(e) {
-    console.log("You hit the " + String.fromCharCode(e.which) + " key; index = " + e.which);
+    // console.log("You hit the " + String.fromCharCode(e.which) + " key; index = " + e.which);
     var keypressed = KEYS[e.which];
+    update_queue(keypressed);
 
     // make sure they pressed a key in KEYS dictionary
     if (!(e.which in KEYS)) {
@@ -73,6 +73,18 @@ function keydown_router(e) {
 }//end keydown_router()
 
 
+function update_queue(keypressed) {
+    prev_keys_queue.push(keypressed);
+
+    // only store previous 25
+    if (prev_keys_queue.length > 25) {
+        var remove = prev_keys_queue.shift();
+    }//end if
+
+    $("#prev_keys").text("Previous Keys Pressed: " + prev_keys_queue);
+}//end update_queue()
+
+
 function change_mode() {
     mode = $(this).attr("id");
     console.log("mode changed to", mode);
@@ -84,10 +96,10 @@ function change_mode() {
 
 
 function reset_genre_borders() {
-    // reset all .genre borders to 1px solid black
+    // reset all .genre borders to 2px solid black
     $(".genre").each( function() {
         var curr_id = $(this).attr("id");
-        $("#" + curr_id).css("border", "1px solid black");
+        $("#" + curr_id).css("border", "2px solid black");
     });//end genre_selector.each()
 }//end reset_genre_borders()
 
@@ -292,6 +304,8 @@ function exit() {
     $(".images").remove();
 
     // stop all sounds FIXME
+
+    prev_keys_queue = [];
 
     // show main screen again
     $("#instructions").show();
