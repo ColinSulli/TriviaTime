@@ -30,11 +30,12 @@ footer {
     height: 100%;
 }
 
-.col-xs-3 {
+.col-xs-2 {
     color: black;
     padding-bottom: 20px;
     padding-top: 20px;
     font-size: 18px;
+    font-weight: medium;
     text-align: center;
     height: 33%;
 }
@@ -45,6 +46,7 @@ footer {
     height: 45px;
     left: 0px;
     top: 0px;
+    text-align: center;
 }
 
 #random {
@@ -59,12 +61,14 @@ footer {
 
 #techno {
     border: 2px solid black;
-    background: green;
+    background: #FF69B4;
+    color: #69FFB4;
 }
 
 #piano {
     border: 2px solid black;
-    background: red;
+    background: black;
+    color: white;
 }
 
 #tutorial {

@@ -7,10 +7,10 @@ FEATURES:
     - 
 
 2. Interactivity: 
-    - Each keypress uses the same image for all modes (ex: "4" always uses "FIXME" in its animation).
-    - Each animation of these images will be (random, deterministic? FIXME) and where the image is generated on the screen is random. 
+    - Each keypress uses the same image for all modes (ex: "S" always uses "squiggle.gif" in its animation).
+    - Each animation of these images (direction, speed) will be random and where the image is generated on the screen is also random. 
     - "Hit [Esc] to exit" is clearly displayed at the bottom of the page so the user can go back to the start screen without having to refresh.
-    - FIXME: mention the queue at the bottom
+    - We have also implemented a "Previous Keys Pressed" queue so if the user hits a sequence of keys that they like, they can repeat it by looking at their "history."
     - 
     - 
 3. 

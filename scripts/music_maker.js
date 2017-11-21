@@ -8,7 +8,7 @@ var OBJECT_SPEED = 5;           // pixels per ms
 var OBJECT_REFRESH_RATE = 50;   // ms
 
 var state = "initial";          // options: "initial" or "running"
-var mode  = "random";           // options: "random", drum_kit", "orchestra", "piano", "FIXME"
+var mode  = "random";           // options: "random", drum_kit", "orchestra", "piano", "tutorial"
 var prev_keys_queue = [];
 
 var animations = [  animate_top_down,
@@ -32,6 +32,7 @@ $(document).ready( function() {
     $("#drum_kit").click(change_mode);
     $("#techno").click(change_mode);
     $("#piano").click(change_mode);
+    $("#tutorial").click(change_mode);
 
     $(window).keydown(keydown_router);
 
@@ -91,6 +92,15 @@ function change_mode() {
     // reset all borders, then highlight mode selected
     reset_genre_borders();
     $("#" + mode).css("border", "5px solid yellow");
+
+    // special modes
+    if (mode === "tutorial") {
+        // FIXME: call tutorial mode function
+    }//end if tutorial
+    if (mode === "piano") {
+        // FIXME: call piano mode function to display piano
+    }//end if piano
+
 }//end change_mode()
 
 
@@ -99,7 +109,7 @@ function reset_genre_borders() {
     $(".genre").each( function() {
         var curr_id = $(this).attr("id");
         $("#" + curr_id).css("border", "2px solid black");
-    });//end genre_selector.each()
+    });
 }//end reset_genre_borders()
 
 
