@@ -131,13 +131,14 @@ function create_image(image_src) {
 // image_id should be passed as something like: idx-99
 function animate_top_down(image_id) {
     var this_img = $('#' + image_id);
+    var this_speed = get_random_num(2, 5);
 
     // randomly set horizontal position
     var starting_position = Math.random() * ($("#main").width() - this_img.width());
     this_img.css("left", starting_position + "px");
 
     var img_animate = setInterval( function() {
-        this_img.css("top", parseInt(this_img.css('top')) + OBJECT_SPEED);
+        this_img.css("top", parseInt(this_img.css('top')) + this_speed);
 
         // Check to see if the image has left the main window
         if (parseInt(this_img.css('top')) > ($('#main').height() - this_img.height())) {
@@ -151,6 +152,7 @@ function animate_top_down(image_id) {
 // image_id should be passed as something like: idx-99
 function animate_bottom_up(image_id) {
     var this_img = $('#' + image_id);
+    var this_speed = get_random_num(2, 5);
 
     // randomly set horizontal position
     var starting_position = Math.random() * ($("#main").width() - this_img.width());
@@ -160,7 +162,7 @@ function animate_bottom_up(image_id) {
     this_img.css("top", $("main").height());
 
     var img_animate = setInterval( function() {
-        this_img.css("top", parseInt(this_img.css('top')) - OBJECT_SPEED);
+        this_img.css("top", parseInt(this_img.css('top')) - this_speed);
 
         if (parseInt(this_img.css('top')) < 0) {
             this_img.remove();
@@ -173,13 +175,14 @@ function animate_bottom_up(image_id) {
 // image_id should be passed as something like: idx-99
 function animate_left_right(image_id) {
     var this_img = $('#' + image_id);
+    var this_speed = get_random_num(2, 5);
 
     // randomly set vertical position
     var starting_position = Math.random() * ($("#main").height() - this_img.height());
     this_img.css("top", starting_position + "px");
 
     var img_animate = setInterval( function() {
-        this_img.css("left", parseInt(this_img.css("left")) + OBJECT_SPEED);
+        this_img.css("left", parseInt(this_img.css("left")) + this_speed);
 
         // Check to see if the image has left the main window
         if (parseInt(this_img.css('left')) > ($('#main').width() - this_img.width())) {
@@ -193,6 +196,7 @@ function animate_left_right(image_id) {
 // image_id should be passed as something like: idx-99
 function animate_right_left(image_id) {
     var this_img = $('#' + image_id);
+    var this_speed = get_random_num(2, 5);
 
     // randomly set vertical position
     var starting_position = Math.random() * ($("#main").height() - this_img.height());
@@ -201,7 +205,7 @@ function animate_right_left(image_id) {
     this_img.css("right", "0px");
 
     var img_animate = setInterval( function() {
-        this_img.css("right", parseInt(this_img.css("right")) + OBJECT_SPEED);
+        this_img.css("right", parseInt(this_img.css("right")) + this_speed);
 
         // Check to see if the image has left the main window
         if (parseInt(this_img.css("right")) > ($('#main').width() - this_img.width())) {
@@ -215,14 +219,16 @@ function animate_right_left(image_id) {
 // image_id should be passed as something like: idx-99
 function animate_top_left_to_bottom_right(image_id) {
     var this_img = $('#' + image_id);
+    var this_speed_top = get_random_num(2, 5);
+    var this_speed_left = get_random_num(2, 5);
 
     // make image start at top left
     this_img.css("left", "0px");
     this_img.css("top", "0px");
 
     var img_animate = setInterval( function() {
-        this_img.css("top", parseInt(this_img.css('top')) + 0.6 * OBJECT_SPEED);
-        this_img.css("left", parseInt(this_img.css('left')) + OBJECT_SPEED);
+        this_img.css("top", parseInt(this_img.css('top')) + this_speed_top);
+        this_img.css("left", parseInt(this_img.css('left')) + this_speed_left);
 
         if ((parseInt(this_img.css('top')) < 0) || (parseInt(this_img.css('left')) > $("#main").width())) {
             this_img.remove();
@@ -235,14 +241,16 @@ function animate_top_left_to_bottom_right(image_id) {
 // image_id should be passed as something like: idx-99
 function animate_top_right_to_bottom_left(image_id) {
     var this_img = $('#' + image_id);
+    var this_speed_top = get_random_num(2, 5);
+    var this_speed_right = get_random_num(2, 5);
 
     // make image start at top right
     this_img.css("right", "0px");
     this_img.css("top", "0px");
 
     var img_animate = setInterval( function() {
-        this_img.css("top", parseInt(this_img.css('top')) + 0.6 * OBJECT_SPEED);
-        this_img.css("right", parseInt(this_img.css('right')) + OBJECT_SPEED);
+        this_img.css("top", parseInt(this_img.css('top')) + this_speed_top);
+        this_img.css("right", parseInt(this_img.css('right')) + this_speed_right);
 
         if ((parseInt(this_img.css('top')) < 0) || (parseInt(this_img.css('right')) > $("#main").width())) {
             this_img.remove();
@@ -254,6 +262,7 @@ function animate_top_right_to_bottom_left(image_id) {
 
 function random_pop_up(image_id) {
     var this_img = $('#' + image_id);
+    var this_time = get_random_num(500, 1000);
 
     // randomly set location
     var starting_positionW = Math.random() * ($("#main").width() - this_img.width());
@@ -264,21 +273,23 @@ function random_pop_up(image_id) {
 
     setTimeout(function() {
         this_img.remove();
-    }, 800);
+    }, this_time);
 }//end random_pop_up()
 
 
 // image_id should be passed as something like: idx-99
 function animate_bottom_right_to_top_left(image_id) {
     var this_img = $('#' + image_id);
+    var this_speed_bott = get_random_num(2, 5);
+    var this_speed_right = get_random_num(2, 5);
 
     // make image start at bottom right
     this_img.css("right", "0px");
     this_img.css("bottom", "0px");
 
     var img_animate = setInterval( function() {
-        this_img.css("bottom", parseInt(this_img.css('bottom')) + 0.6 * OBJECT_SPEED);
-        this_img.css("right", parseInt(this_img.css('right')) + OBJECT_SPEED);
+        this_img.css("bottom", parseInt(this_img.css('bottom')) + this_speed_bott);
+        this_img.css("right", parseInt(this_img.css('right')) + this_speed_right);
 
         if ((parseInt(this_img.css('bottom')) > $("#main").height()) || (parseInt(this_img.css('right')) > $("#main").width()))  {
             this_img.remove();
@@ -291,14 +302,16 @@ function animate_bottom_right_to_top_left(image_id) {
 // image_id should be passed as something like: idx-99
 function animate_bottom_left_to_top_right(image_id) {
     var this_img = $('#' + image_id);
+    var this_speed_bott = get_random_num(2, 5);
+    var this_speed_left = get_random_num(2, 5);
 
     // make image start at bottom left
     this_img.css("left", "0px");
     this_img.css("bottom", "0px");
 
     var img_animate = setInterval( function() {
-        this_img.css("bottom", parseInt(this_img.css('bottom')) + 0.6 * OBJECT_SPEED);
-        this_img.css("left", parseInt(this_img.css('left')) + OBJECT_SPEED);
+        this_img.css("bottom", parseInt(this_img.css('bottom')) + this_speed_bott);
+        this_img.css("left", parseInt(this_img.css('left')) + this_speed_left);
 
         if ((parseInt(this_img.css('bottom')) > $("#main").height()) || (parseInt(this_img.css('left')) > $("#main").width())) {
             this_img.remove();
