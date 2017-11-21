@@ -29,6 +29,11 @@ $(document).ready( function() {
     console.log("Ready!");
 
     // event handlers
+    $("#random").click(change_mode);
+    $("#drum_kit").click(change_mode);
+    $("#techno").click(change_mode);
+    $("#piano").click(change_mode);
+
     $(window).keydown(keydown_router);
 
 
@@ -66,6 +71,25 @@ function keydown_router(e) {
     // master_dict[mode][keypressed].play();
 
 }//end keydown_router()
+
+
+function change_mode() {
+    mode = $(this).attr("id");
+    console.log("mode changed to", mode);
+
+    // reset all borders, then highlight mode selected
+    reset_genre_borders();
+    $("#" + mode).css("border", "5px solid yellow");
+}//end change_mode()
+
+
+function reset_genre_borders() {
+    // reset all .genre borders to 1px solid black
+    $(".genre").each( function() {
+        var curr_id = $(this).attr("id");
+        $("#" + curr_id).css("border", "1px solid black");
+    });//end genre_selector.each()
+}//end reset_genre_borders()
 
 
 function create_image(image_src) {

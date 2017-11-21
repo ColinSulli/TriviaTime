@@ -31,7 +31,6 @@ footer {
 }
 
 .col-xs-3 {
-    border: 1px solid black;
     color: black;
     padding-bottom: 20px;
     padding-top: 20px;
@@ -49,18 +48,22 @@ footer {
 }
 
 #random {
+    border: 1px solid black;
     background: blue;
 }
 
 #drum_kit {
-    background: yellow;
+    border: 1px solid black;
+    background: orange;
 }
 
 #techno {
+    border: 1px solid black;
     background: green;
 }
 
 #piano {
+    border: 1px solid black;
     background: red;
 }
 
