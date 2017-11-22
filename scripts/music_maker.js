@@ -8,7 +8,7 @@ var OBJECT_SPEED = 5;           // pixels per ms
 var OBJECT_REFRESH_RATE = 50;   // ms
 
 var state = "initial";          // options: "initial" or "running"
-var mode  = "random";           // options: "random", drum_kit", "orchestra", "piano", "tutorial"
+var mode  = "random";           // options: "random", "drum_kit", "techno", "piano", "tutorial"
 var prev_keys_queue = [];
 
 var animations = [  animate_top_down,
@@ -67,11 +67,17 @@ function keydown_router(e) {
 
     create_image(master_dict["images"][keypressed]);
 
-    console.log("tone should be =", master_dict[mode][keypressed]);
+    if (mode === "random") {
+        let sound = get_random_sound();
+        let audio = new Audio(sound);
+        audio.play();
+        return;
+    }//end if
+
+    // console.log("tone should be =", master_dict[mode][keypressed]);
     let sound = master_dict[mode][keypressed];
     let audio = new Audio(sound);
     audio.play();
-
 }//end keydown_router()
 
 
@@ -94,6 +100,9 @@ function change_mode() {
     // reset all borders, then highlight mode selected
     reset_genre_borders();
     $("#" + mode).css("border", "5px solid yellow");
+
+    // remove piano img if they select a different mode
+    $("#piano_img").css("visibility", "hidden");
 
     // special modes
     if (mode === "tutorial") {
@@ -356,10 +365,24 @@ function exit() {
     // show main screen again
     $("#instructions").show();
     $("footer").css("visibility", "hidden");
-    $("#piano_img").css("visibility", "hidden");
 
     state = "initial";
 }//end exit()
+
+
+function get_random_sound() {
+    // select a random mode to get a sound from
+    var modes = ["drum_kit", "techno", "piano"];
+    var random_mode = modes[Math.floor(Math.random() * modes.length)];
+    console.log("random mode =", random_mode);
+
+    // select a random key to get a sound from
+    var keys = Object.keys(master_dict[random_mode]);
+    var random_key = keys[Math.floor(Math.random() * keys.length)];
+    console.log("random key =", random_key);
+
+    return master_dict[random_mode][random_key];
+}//end get_random_sound()
 
 
 function get_random_num(min, max) {

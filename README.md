@@ -61,4 +61,4 @@ SOUND CREDITS:
 drum_kit: https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/
 all piano keys: https://freesound.org/people/pinkyfinger/packs/4409/
 techno sounds: 
-
+All sounds used in "random mode" are taken from the above sources. 

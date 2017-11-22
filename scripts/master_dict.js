@@ -41,45 +41,6 @@ var master_dict = {
         Z: "./img/Z.gif"
     },//end images
 
-    random: { 
-        0: "./audio/gameover.wav", 
-        1: "./audio/gameover.wav", 
-        2: "./audio/gameover.wav", 
-        3: "./audio/gameover.wav", 
-        4: "./audio/gameover.wav", 
-        5: "./audio/gameover.wav", 
-        6: "./audio/gameover.wav", 
-        7: "./audio/gameover.wav", 
-        8: "./audio/gameover.wav", 
-        9: "./audio/gameover.wav", 
-        A: "./audio/gameover.wav", 
-        B: "./audio/gameover.wav", 
-        C: "./audio/gameover.wav", 
-        D: "./audio/gameover.wav", 
-        E: "./audio/gameover.wav", 
-        F: "./audio/gameover.wav", 
-        G: "./audio/gameover.wav", 
-        H: "./audio/gameover.wav", 
-        I: "./audio/gameover.wav", 
-        J: "./audio/gameover.wav", 
-        K: "./audio/gameover.wav", 
-        L: "./audio/gameover.wav", 
-        M: "./audio/gameover.wav", 
-        N: "./audio/gameover.wav", 
-        O: "./audio/gameover.wav", 
-        P: "./audio/gameover.wav", 
-        Q: "./audio/gameover.wav", 
-        R: "./audio/gameover.wav", 
-        S: "./audio/gameover.wav", 
-        T: "./audio/gameover.wav", 
-        U: "./audio/gameover.wav", 
-        V: "./audio/gameover.wav", 
-        W: "./audio/gameover.wav", 
-        X: "./audio/gameover.wav", 
-        Y: "./audio/gameover.wav", 
-        Z: "./audio/gameover.wav"
-    },//end random
-
     drum_kit: {
         0: "./audio/drum_kit/kick/kick08.wav", 
         1: "./audio/drum_kit/kick/kick09.wav", 
@@ -168,12 +129,12 @@ var master_dict = {
         H: "./audio/piano/A.wav",
         J: "./audio/piano/B.wav",
 
-        // black keys
-        W: "./audio/piano/C#.wav",
-        E: "./audio/piano/D#.wav",
-        T: "./audio/piano/F#.wav",
-        Y: "./audio/piano/G#.wav",
-        U: "./audio/piano/A#.wav"
+        // black keys 
+        W: "./audio/piano/Csharp.wav",
+        E: "./audio/piano/Dsharp.wav",
+        T: "./audio/piano/Fsharp.wav",
+        Y: "./audio/piano/Gsharp.wav",
+        U: "./audio/piano/Asharp.wav"
     },//end piano
 
     // FIXME: add tutorial - should probably just use piano keys
