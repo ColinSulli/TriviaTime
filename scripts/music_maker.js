@@ -124,6 +124,7 @@ function create_image(image_src) {
     // randomly animate image
     var random_animation_func = get_random_num(0, animations.length);
     var this_animation = animations[random_animation_func];
+    //var this_animation = animations[0];
     this_animation(curr_img_id);
 }//end create_image()
 
@@ -141,7 +142,7 @@ function animate_top_down(image_id) {
         this_img.css("top", parseInt(this_img.css('top')) + this_speed);
 
         // Check to see if the image has left the main window
-        if (parseInt(this_img.css('top')) > ($('#main').height() - this_img.height())) {
+        if (parseInt(this_img.css('top')) > ($('#main').height() - this_img.height() + 40)) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -154,17 +155,19 @@ function animate_bottom_up(image_id) {
     var this_img = $('#' + image_id);
     var this_speed = get_random_num(2, 5);
 
+
     // randomly set horizontal position
     var starting_position = Math.random() * ($("#main").width() - this_img.width());
     this_img.css("left", starting_position + "px");
 
     // make image start at bottom of main screen
-    this_img.css("top", $("main").height());
+    //console.log("top for main: !!!  "+ parseInt($("#main").height()));
+    this_img.css("top", $("#main").height());
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) - this_speed);
-
-        if (parseInt(this_img.css('top')) < 0) {
+        //console.log("top "+parseInt(this_img.css('top')));
+        if (parseInt(this_img.css('top')) <= 80) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -178,7 +181,13 @@ function animate_left_right(image_id) {
     var this_speed = get_random_num(2, 5);
 
     // randomly set vertical position
-    var starting_position = Math.random() * ($("#main").height() - this_img.height());
+    //console.log("main height "+ parseInt($("#main").height()));
+    var rando = Math.random();
+    if(rando <= 0.2) {
+        rando = 0.4;
+    }
+    var starting_position = rando * ($("#main").height() - this_img.height());
+    //var starting_position = 80;
     this_img.css("top", starting_position + "px");
 
     var img_animate = setInterval( function() {
@@ -199,7 +208,11 @@ function animate_right_left(image_id) {
     var this_speed = get_random_num(2, 5);
 
     // randomly set vertical position
-    var starting_position = Math.random() * ($("#main").height() - this_img.height());
+    var rando = Math.random();
+    if(rando <= 0.2) {
+        rando = 0.4;
+    }
+    var starting_position = rando * ($("#main").height() - this_img.height());
     this_img.css("top", starting_position + "px");
 
     this_img.css("right", "0px");
@@ -223,14 +236,14 @@ function animate_top_left_to_bottom_right(image_id) {
     var this_speed_left = get_random_num(2, 5);
 
     // make image start at top left
-    this_img.css("left", "0px");
-    this_img.css("top", "0px");
+    this_img.css("left", "10px");
+    this_img.css("top", "80px");
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) + this_speed_top);
         this_img.css("left", parseInt(this_img.css('left')) + this_speed_left);
 
-        if ((parseInt(this_img.css('top')) < 0) || (parseInt(this_img.css('left')) > $("#main").width())) {
+        if ((parseInt(this_img.css('top')) > $('#main').height()) || (parseInt(this_img.css('left')) > (-80+$("#main").width()))) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -246,13 +259,14 @@ function animate_top_right_to_bottom_left(image_id) {
 
     // make image start at top right
     this_img.css("right", "0px");
-    this_img.css("top", "0px");
+    this_img.css("top", "80px");
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) + this_speed_top);
         this_img.css("right", parseInt(this_img.css('right')) + this_speed_right);
-
-        if ((parseInt(this_img.css('top')) < 0) || (parseInt(this_img.css('right')) > $("#main").width())) {
+        // console.log("top "+parseInt(this_img.css('top')));
+        // console.log("right "+parseInt(this_img.css('right')));
+        if ((parseInt(this_img.css('top')) > $('#main').height()) || (parseInt(this_img.css('right')) > (-80+$("#main").width()))) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -265,8 +279,16 @@ function random_pop_up(image_id) {
     var this_time = get_random_num(500, 1000);
 
     // randomly set location
-    var starting_positionW = Math.random() * ($("#main").width() - this_img.width());
-    var starting_positionH = Math.random() * ($("#main").height() - this_img.height());
+    var rando = Math.random();
+    if(rando <= 0.2) {
+        rando = 0.4;
+    }
+    var starting_positionW = rando * ($("#main").width() - this_img.width());
+    rando = Math.random();
+    if(rando <= 0.2) {
+        rando = 0.4;
+    }
+    var starting_positionH = rando * ($("#main").height() - this_img.height());
 
     this_img.css("left", starting_positionW + "px");
     this_img.css("top",  starting_positionH + "px");
@@ -284,14 +306,14 @@ function animate_bottom_right_to_top_left(image_id) {
     var this_speed_right = get_random_num(2, 5);
 
     // make image start at bottom right
-    this_img.css("right", "0px");
-    this_img.css("bottom", "0px");
+    this_img.css("right", "20px");
+    this_img.css("top", $("#main").height()-20);
 
     var img_animate = setInterval( function() {
-        this_img.css("bottom", parseInt(this_img.css('bottom')) + this_speed_bott);
+        this_img.css("top", parseInt(this_img.css('top')) - this_speed_bott);
         this_img.css("right", parseInt(this_img.css('right')) + this_speed_right);
 
-        if ((parseInt(this_img.css('bottom')) > $("#main").height()) || (parseInt(this_img.css('right')) > $("#main").width()))  {
+         if ((parseInt(this_img.css('top')) <=80) || (parseInt(this_img.css('right')) >= (-80+$("#main").width()))) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -306,14 +328,14 @@ function animate_bottom_left_to_top_right(image_id) {
     var this_speed_left = get_random_num(2, 5);
 
     // make image start at bottom left
-    this_img.css("left", "0px");
-    this_img.css("bottom", "0px");
+    this_img.css("left", "20px");
+    this_img.css("top", $("#main").height()-20);
 
     var img_animate = setInterval( function() {
-        this_img.css("bottom", parseInt(this_img.css('bottom')) + this_speed_bott);
+        this_img.css("top", parseInt(this_img.css('top')) - this_speed_bott);
         this_img.css("left", parseInt(this_img.css('left')) + this_speed_left);
 
-        if ((parseInt(this_img.css('bottom')) > $("#main").height()) || (parseInt(this_img.css('left')) > $("#main").width())) {
+        if ((parseInt(this_img.css('top')) <=80) || (parseInt(this_img.css('left')) >= (-80+$("#main").width()))) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if

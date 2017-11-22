@@ -84,7 +84,7 @@ footer {
 /* MAIN SCREEN ITEMS */
 #main {
     height: 500px;
-    line-height: 500px;
+    /*line-height: 500px; fixed the top down but purpose was for keeping text in the middle*/
     width: 100%;
     font-size: 24px;
     text-align: center;
