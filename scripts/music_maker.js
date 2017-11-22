@@ -100,7 +100,7 @@ function change_mode() {
         // FIXME: call tutorial mode function
     }//end if tutorial
     if (mode === "piano") {
-        // FIXME: call piano mode function to display piano
+        $("#piano_img").css("visibility", "visible");
     }//end if piano
 
 }//end change_mode()
@@ -126,7 +126,6 @@ function create_image(image_src) {
     // randomly animate image
     var random_animation_func = get_random_num(0, animations.length);
     var this_animation = animations[random_animation_func];
-    //var this_animation = animations[0];
     this_animation(curr_img_id);
 }//end create_image()
 
@@ -357,6 +356,7 @@ function exit() {
     // show main screen again
     $("#instructions").show();
     $("footer").css("visibility", "hidden");
+    $("#piano_img").css("visibility", "hidden");
 
     state = "initial";
 }//end exit()
