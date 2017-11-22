@@ -68,7 +68,9 @@ function keydown_router(e) {
     create_image(master_dict["images"][keypressed]);
 
     console.log("tone should be =", master_dict[mode][keypressed]);
-    // master_dict[mode][keypressed].play();
+    let sound = master_dict[mode][keypressed];
+    let audio = new Audio(sound);
+    audio.play();
 
 }//end keydown_router()
 
