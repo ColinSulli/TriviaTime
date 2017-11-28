@@ -4,6 +4,8 @@
 var img_idx = 0;
 
 // size and movement constants
+var MIN_IMG_SPEED = 3;
+var MAX_IMG_SPEED = 15;
 var OBJECT_REFRESH_RATE = 50;   // ms
 
 var state = "initial";          // options: "initial" or "running"
@@ -133,10 +135,10 @@ function create_image(image_src) {
 }//end create_image()
 
 
-// image_id should be passed as something like: idx-99
+// For ALL animation functions, image_id should be passed as something like: idx-99
 function animate_top_down(image_id) {
     var this_img = $('#' + image_id);
-    var this_speed = get_random_num(2, 5);
+    var this_speed = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
 
     // randomly set horizontal position
     var starting_position = Math.random() * ($("#main").width() - this_img.width());
@@ -154,10 +156,9 @@ function animate_top_down(image_id) {
 }//end animate_top_down()
 
 
-// image_id should be passed as something like: idx-99
 function animate_bottom_up(image_id) {
     var this_img = $('#' + image_id);
-    var this_speed = get_random_num(2, 5);
+    var this_speed = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
 
     // randomly set horizontal position
     var starting_position = Math.random() * ($("#main").width() - this_img.width());
@@ -178,10 +179,9 @@ function animate_bottom_up(image_id) {
 }//end animate_bottom_up()
 
 
-// image_id should be passed as something like: idx-99
 function animate_left_right(image_id) {
     var this_img = $('#' + image_id);
-    var this_speed = get_random_num(2, 5);
+    var this_speed = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
 
     // randomly set vertical position
     var starting_position = (Math.random() + 0.2) * ($("#main").height() - this_img.height());
@@ -199,10 +199,9 @@ function animate_left_right(image_id) {
 }//end animate_left_right()
 
 
-// image_id should be passed as something like: idx-99
 function animate_right_left(image_id) {
     var this_img = $('#' + image_id);
-    var this_speed = get_random_num(2, 5);
+    var this_speed = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
 
     // randomly set vertical position
     var starting_position = (Math.random() + 0.2) * ($("#main").height() - this_img.height());
@@ -222,11 +221,10 @@ function animate_right_left(image_id) {
 }//end animate_right_left()
 
 
-// image_id should be passed as something like: idx-99
 function animate_top_left_to_bottom_right(image_id) {
     var this_img = $('#' + image_id);
-    var this_speed_top = get_random_num(2, 5);
-    var this_speed_left = get_random_num(2, 5);
+    var this_speed_top = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
+    var this_speed_left = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
 
     // make image start at top left
     this_img.css("left", "10px");
@@ -244,11 +242,10 @@ function animate_top_left_to_bottom_right(image_id) {
 }//end animate_top_left_to_bottom_right()
 
 
-// image_id should be passed as something like: idx-99
 function animate_top_right_to_bottom_left(image_id) {
     var this_img = $('#' + image_id);
-    var this_speed_top = get_random_num(2, 5);
-    var this_speed_right = get_random_num(2, 5);
+    var this_speed_top = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
+    var this_speed_right = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
 
     // make image start at top right
     this_img.css("right", "0px");
@@ -286,8 +283,8 @@ function random_pop_up(image_id) {
 // image_id should be passed as something like: idx-99
 function animate_bottom_right_to_top_left(image_id) {
     var this_img = $('#' + image_id);
-    var this_speed_bott = get_random_num(2, 5);
-    var this_speed_right = get_random_num(2, 5);
+    var this_speed_bott = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
+    var this_speed_right = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
 
     // make image start at bottom right
     this_img.css("right", "20px");
@@ -308,8 +305,8 @@ function animate_bottom_right_to_top_left(image_id) {
 // image_id should be passed as something like: idx-99
 function animate_bottom_left_to_top_right(image_id) {
     var this_img = $('#' + image_id);
-    var this_speed_bott = get_random_num(2, 5);
-    var this_speed_left = get_random_num(2, 5);
+    var this_speed_bott = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
+    var this_speed_left = get_random_num(MIN_IMG_SPEED, MAX_IMG_SPEED);
 
     // make image start at bottom left
     this_img.css("left", "20px");

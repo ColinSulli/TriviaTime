@@ -2,7 +2,7 @@ EECS 493 | Team P03 | Final Project
 
 FEATURES:
 1. Start Screen: 
-    - The user can select a "mode" which will change which sounds/tones are played for each key.
+    - The user can select a "mode" which will change which sounds/tones are played for each key. The user can also change modes while in interactive mode. 
     - Once the user presses an alphanumeric key, the interactive mode is initiated.
     - 
 
@@ -12,8 +12,13 @@ FEATURES:
     - "Hit [Esc] to exit" is clearly displayed at the bottom of the page so the user can go back to the start screen without having to refresh.
     - We have also implemented a "Previous Keys Pressed" queue so if the user hits a sequence of keys that they like, they can repeat it by looking at their "history."
     - 
-    - 
-3. 
+
+3. Special Modes:
+    - PIANO: 
+        - Piano mode only uses certain keys and replicates a real (miniature) piano--an image showing users what to do is displayed when Piano mode is selected.
+        - Users can press any key to see an animation, but only the keys shown in the piano image will actually play sounds.
+    - TUTORIAL: 
+        - 
 
 
 IMAGE CREDITS: 
@@ -61,4 +66,7 @@ SOUND CREDITS:
 drum_kit: https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/
 all piano keys: https://freesound.org/people/pinkyfinger/packs/4409/
 techno sounds: 
-All sounds used in "random mode" are taken from the above sources. 
+Sounds used in "random mode" are taken from the above sources or the sources listed below:
+- FIXME extra sound sources
+- FIXME 
+- 
