@@ -175,6 +175,46 @@ var master_dict = {
         X: "./audio/gameover.wav", 
         Y: "./audio/gameover.wav", 
         Z: "./audio/gameover.wav"
-    }//end tutorial
+    },//end tutorial
+
+    // extra sounds -- only used during "random" mode
+    extra: {
+        0: "./audio/gameover.wav", 
+        // 1: "./audio/gameover.wav", 
+        // 2: "./audio/gameover.wav", 
+        // 3: "./audio/gameover.wav", 
+        // 4: "./audio/gameover.wav", 
+        // 5: "./audio/gameover.wav", 
+        // 6: "./audio/gameover.wav", 
+        // 7: "./audio/gameover.wav", 
+        // 8: "./audio/gameover.wav", 
+        // 9: "./audio/gameover.wav", 
+        // A: "./audio/gameover.wav", 
+        // B: "./audio/gameover.wav", 
+        // C: "./audio/gameover.wav", 
+        // D: "./audio/gameover.wav", 
+        // E: "./audio/gameover.wav", 
+        // F: "./audio/gameover.wav", 
+        // G: "./audio/gameover.wav", 
+        // H: "./audio/gameover.wav", 
+        // I: "./audio/gameover.wav", 
+        // J: "./audio/gameover.wav", 
+        // K: "./audio/gameover.wav", 
+        // L: "./audio/gameover.wav", 
+        // M: "./audio/gameover.wav", 
+        // N: "./audio/gameover.wav", 
+        // O: "./audio/gameover.wav", 
+        // P: "./audio/gameover.wav", 
+        // Q: "./audio/gameover.wav", 
+        // R: "./audio/gameover.wav", 
+        // S: "./audio/gameover.wav", 
+        // T: "./audio/gameover.wav", 
+        // U: "./audio/gameover.wav", 
+        // V: "./audio/gameover.wav", 
+        // W: "./audio/gameover.wav", 
+        // X: "./audio/gameover.wav", 
+        // Y: "./audio/gameover.wav", 
+        Z: "./audio/gameover.wav"
+    }//end extra
 
 }//end master_dict

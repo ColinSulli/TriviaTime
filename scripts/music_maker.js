@@ -4,7 +4,6 @@
 var img_idx = 0;
 
 // size and movement constants
-var OBJECT_SPEED = 5;           // pixels per ms
 var OBJECT_REFRESH_RATE = 50;   // ms
 
 var state = "initial";          // options: "initial" or "running"
@@ -35,8 +34,6 @@ $(document).ready( function() {
     $("#tutorial").click(change_mode);
 
     $(window).keydown(keydown_router);
-
-
 });//end document.ready()
 
 // ==================== CALLBACK FUNCTIONS ==================== //
@@ -68,9 +65,7 @@ function keydown_router(e) {
     create_image(master_dict["images"][keypressed]);
 
     if (mode === "random") {
-        let sound = get_random_sound();
-        let audio = new Audio(sound);
-        audio.play();
+        play_random_sound();
         return;
     }//end if
 
@@ -101,7 +96,7 @@ function change_mode() {
     reset_genre_borders();
     $("#" + mode).css("border", "5px solid yellow");
 
-    // remove piano img if they select a different mode
+    // remove piano img
     $("#piano_img").css("visibility", "hidden");
 
     // special modes
@@ -111,7 +106,6 @@ function change_mode() {
     if (mode === "piano") {
         $("#piano_img").css("visibility", "visible");
     }//end if piano
-
 }//end change_mode()
 
 
@@ -165,7 +159,6 @@ function animate_bottom_up(image_id) {
     var this_img = $('#' + image_id);
     var this_speed = get_random_num(2, 5);
 
-
     // randomly set horizontal position
     var starting_position = Math.random() * ($("#main").width() - this_img.width());
     this_img.css("left", starting_position + "px");
@@ -191,13 +184,7 @@ function animate_left_right(image_id) {
     var this_speed = get_random_num(2, 5);
 
     // randomly set vertical position
-    //console.log("main height "+ parseInt($("#main").height()));
-    var rando = Math.random();
-    if(rando <= 0.2) {
-        rando = 0.4;
-    }
-    var starting_position = rando * ($("#main").height() - this_img.height());
-    //var starting_position = 80;
+    var starting_position = (Math.random() + 0.2) * ($("#main").height() - this_img.height());
     this_img.css("top", starting_position + "px");
 
     var img_animate = setInterval( function() {
@@ -218,11 +205,7 @@ function animate_right_left(image_id) {
     var this_speed = get_random_num(2, 5);
 
     // randomly set vertical position
-    var rando = Math.random();
-    if(rando <= 0.2) {
-        rando = 0.4;
-    }
-    var starting_position = rando * ($("#main").height() - this_img.height());
+    var starting_position = (Math.random() + 0.2) * ($("#main").height() - this_img.height());
     this_img.css("top", starting_position + "px");
 
     this_img.css("right", "0px");
@@ -253,7 +236,7 @@ function animate_top_left_to_bottom_right(image_id) {
         this_img.css("top", parseInt(this_img.css('top')) + this_speed_top);
         this_img.css("left", parseInt(this_img.css('left')) + this_speed_left);
 
-        if ((parseInt(this_img.css('top')) > $('#main').height()) || (parseInt(this_img.css('left')) > (-80+$("#main").width()))) {
+        if ((parseInt(this_img.css('top')) > $('#main').height()) || (parseInt(this_img.css('left')) > (-80 + $("#main").width()))) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -274,9 +257,8 @@ function animate_top_right_to_bottom_left(image_id) {
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) + this_speed_top);
         this_img.css("right", parseInt(this_img.css('right')) + this_speed_right);
-        // console.log("top "+parseInt(this_img.css('top')));
-        // console.log("right "+parseInt(this_img.css('right')));
-        if ((parseInt(this_img.css('top')) > $('#main').height()) || (parseInt(this_img.css('right')) > (-80+$("#main").width()))) {
+
+        if ((parseInt(this_img.css('top')) > $('#main').height()) || (parseInt(this_img.css('right')) > (-80 + $("#main").width()))) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -289,16 +271,8 @@ function random_pop_up(image_id) {
     var this_time = get_random_num(500, 1000);
 
     // randomly set location
-    var rando = Math.random();
-    if(rando <= 0.2) {
-        rando = 0.4;
-    }
-    var starting_positionW = rando * ($("#main").width() - this_img.width());
-    rando = Math.random();
-    if(rando <= 0.2) {
-        rando = 0.4;
-    }
-    var starting_positionH = rando * ($("#main").height() - this_img.height());
+    var starting_positionW = (Math.random() + 0.2) * ($("#main").width() - this_img.width());
+    var starting_positionH = (Math.random() + 0.2) * ($("#main").height() - this_img.height());
 
     this_img.css("left", starting_positionW + "px");
     this_img.css("top",  starting_positionH + "px");
@@ -317,13 +291,13 @@ function animate_bottom_right_to_top_left(image_id) {
 
     // make image start at bottom right
     this_img.css("right", "20px");
-    this_img.css("top", $("#main").height()-20);
+    this_img.css("top", $("#main").height() - 20);
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) - this_speed_bott);
         this_img.css("right", parseInt(this_img.css('right')) + this_speed_right);
 
-         if ((parseInt(this_img.css('top')) <=80) || (parseInt(this_img.css('right')) >= (-80+$("#main").width()))) {
+         if ((parseInt(this_img.css('top')) <= 80) || (parseInt(this_img.css('right')) >= (-80 + $("#main").width()))) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -339,13 +313,13 @@ function animate_bottom_left_to_top_right(image_id) {
 
     // make image start at bottom left
     this_img.css("left", "20px");
-    this_img.css("top", $("#main").height()-20);
+    this_img.css("top", $("#main").height() - 20);
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) - this_speed_bott);
         this_img.css("left", parseInt(this_img.css('left')) + this_speed_left);
 
-        if ((parseInt(this_img.css('top')) <=80) || (parseInt(this_img.css('left')) >= (-80+$("#main").width()))) {
+        if ((parseInt(this_img.css('top')) <= 80) || (parseInt(this_img.css('left')) >= (-80 + $("#main").width()))) {
             this_img.remove();
             clearInterval(img_animate);
         }//end if
@@ -370,9 +344,9 @@ function exit() {
 }//end exit()
 
 
-function get_random_sound() {
+function play_random_sound() {
     // select a random mode to get a sound from
-    var modes = ["drum_kit", "techno", "piano"];
+    var modes = ["drum_kit", "techno", "piano", "extra"];
     var random_mode = modes[Math.floor(Math.random() * modes.length)];
     console.log("random mode =", random_mode);
 
@@ -381,7 +355,10 @@ function get_random_sound() {
     var random_key = keys[Math.floor(Math.random() * keys.length)];
     console.log("random key =", random_key);
 
-    return master_dict[random_mode][random_key];
+    var sound = master_dict[random_mode][random_key];
+    var audio = new Audio(sound);
+    console.log("random sound is =", sound);
+    audio.play();
 }//end get_random_sound()
 
 
