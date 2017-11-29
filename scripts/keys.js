@@ -6,7 +6,7 @@ var KEYS = {
 
     27: "escape",
 
-    // numbers
+    // numbers (above keyboard)
     48: 0,
     49: 1,
     50: 2, 
@@ -17,6 +17,18 @@ var KEYS = {
     55: 7, 
     56: 8,
     57: 9, 
+
+    // numbers (on numberpad)
+    96:  0,
+    97:  1,
+    98:  2, 
+    99:  3,
+    100: 4,
+    101: 5,
+    102: 6, 
+    103: 7, 
+    104: 8,
+    105: 9, 
 
     // alphabet
     65: "A",
