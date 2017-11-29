@@ -345,16 +345,16 @@ function play_random_sound() {
     // select a random mode to get a sound from
     var modes = ["drum_kit", "techno", "piano", "extra"];
     var random_mode = modes[Math.floor(Math.random() * modes.length)];
-    console.log("random mode =", random_mode);
+    // console.log("random mode =", random_mode);
 
     // select a random key to get a sound from
     var keys = Object.keys(master_dict[random_mode]);
     var random_key = keys[Math.floor(Math.random() * keys.length)];
-    console.log("random key =", random_key);
+    // console.log("random key =", random_key);
 
     var sound = master_dict[random_mode][random_key];
     var audio = new Audio(sound);
-    console.log("random sound is =", sound);
+    // console.log("random sound is =", sound);
     audio.play();
 }//end get_random_sound()
 

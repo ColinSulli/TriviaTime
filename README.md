@@ -8,6 +8,7 @@ FEATURES:
 
 2. Interactivity: 
     - Each keypress uses the same image for all modes (ex: "S" always uses "squiggle.gif" in its animation).
+      - NOTE: All alphanumeric keys work ([a-Z] & [0-9]), but if you're using the keys on the number pad, you MUST have NumLock enabled.
     - Each animation of these images (direction, speed) will be random and where the image is generated on the screen is also random. 
     - "Hit [Esc] to exit" is clearly displayed at the bottom of the page so the user can go back to the start screen without having to refresh.
     - We have also implemented a "Previous Keys Pressed" queue so if the user hits a sequence of keys that they like, they can repeat it by looking at their "history."
@@ -72,6 +73,7 @@ Sounds used in "random mode" are taken from the above sources or the sources lis
 - https://freesound.org/search/?q=cow&f=&s=duration+asc&advanced=0&g=1
 - https://freesound.org/search/?q=bird&f=&s=duration+asc&advanced=0&g=1
 - https://freesound.org/search/?q=alien&f=&s=duration+asc&advanced=0&g=1
-- 
-- FIXME 
-- 
+- https://freesound.org/search/?q=chime&s=duration+asc&g=1&advanced=0&f=&page=2#sound
+- https://freesound.org/search/?q=squish&f=&s=duration+asc&advanced=0&g=1
+- https://freesound.org/search/?q=shotgun&s=duration+asc&g=1&advanced=0&f=&page=2#sound
+- https://freesound.org/search/?q=doorbell&f=&s=duration+asc&advanced=0&g=1
