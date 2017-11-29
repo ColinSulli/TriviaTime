@@ -179,25 +179,25 @@ var master_dict = {
 
     // extra sounds -- only used during "random" mode
     extra: {
-        0: "./audio/gameover.wav", 
-        // 1: "./audio/gameover.wav", 
-        // 2: "./audio/gameover.wav", 
-        // 3: "./audio/gameover.wav", 
-        // 4: "./audio/gameover.wav", 
-        // 5: "./audio/gameover.wav", 
-        // 6: "./audio/gameover.wav", 
-        // 7: "./audio/gameover.wav", 
-        // 8: "./audio/gameover.wav", 
-        // 9: "./audio/gameover.wav", 
-        // A: "./audio/gameover.wav", 
-        // B: "./audio/gameover.wav", 
-        // C: "./audio/gameover.wav", 
-        // D: "./audio/gameover.wav", 
-        // E: "./audio/gameover.wav", 
-        // F: "./audio/gameover.wav", 
-        // G: "./audio/gameover.wav", 
-        // H: "./audio/gameover.wav", 
-        // I: "./audio/gameover.wav", 
+        0: "./audio/extra/gameover.wav", 
+        1: "./audio/extra/arc.wav",  
+        2: "./audio/extra/bird2.wav", 
+        3: "./audio/extra/bird3.wav",  
+        4: "./audio/extra/blip.wav",  
+        5: "./audio/extra/blip2.wav",  
+        6: "./audio/blip3.aiff", 
+        7: "./audio/coot.wav", 
+        8: "./audio/cowbell1.wav", 
+        9: "./audio/crow.wav", 
+        A: "./audio/deleted.wav", 
+        B: "./audio/laser.wav", 
+        C: "./audio/laser2.wav", 
+        D: "./audio/moo.wav", 
+        E: "./audio/moo2.wav", 
+        F: "./audio/robot.wav", 
+        G: "./audio/alien1.wav", 
+        H: "./audio/alien_frog.wav", 
+        I: "./audio/glitch.wav", 
         // J: "./audio/gameover.wav", 
         // K: "./audio/gameover.wav", 
         // L: "./audio/gameover.wav", 
@@ -214,7 +214,7 @@ var master_dict = {
         // W: "./audio/gameover.wav", 
         // X: "./audio/gameover.wav", 
         // Y: "./audio/gameover.wav", 
-        Z: "./audio/gameover.wav"
+        Z: "./audio/extra/gameover.wav"
     }//end extra
 
 }//end master_dict

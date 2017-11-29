@@ -67,6 +67,11 @@ drum_kit: https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/
 all piano keys: https://freesound.org/people/pinkyfinger/packs/4409/
 techno sounds: 
 Sounds used in "random mode" are taken from the above sources or the sources listed below:
-- FIXME extra sound sources
+- https://freesound.org/search/?q=moog&f=&s=duration+asc&advanced=0&g=1
+- https://freesound.org/search/?q=guitar&f=&s=duration+asc&advanced=0&g=1
+- https://freesound.org/search/?q=cow&f=&s=duration+asc&advanced=0&g=1
+- https://freesound.org/search/?q=bird&f=&s=duration+asc&advanced=0&g=1
+- https://freesound.org/search/?q=alien&f=&s=duration+asc&advanced=0&g=1
+- 
 - FIXME 
 - 
