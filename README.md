@@ -65,7 +65,7 @@ batman_run.gif: https://giphy.com/gifs/cartoon-batman-running-12MhwQm8toOEp2
 SOUND CREDITS: 
 drum_kit: https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/
 all piano keys: https://freesound.org/people/pinkyfinger/packs/4409/
-techno sounds: 
+techno sounds: https://www.samplephonics.com/products/free/deep-house/deep-melodic-house-freebie
 Sounds used in "random mode" are taken from the above sources or the sources listed below:
 - FIXME extra sound sources
 - FIXME 
