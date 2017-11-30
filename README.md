@@ -62,6 +62,7 @@ Z: https://giphy.com/stickers/grandma-11STxD0O4gunLO
 Music_Maker.png: http://clipart-library.com/clipart/8TxrGebyc.htm
 Favicon.ico: https://i.pinimg.com/736x/69/96/5c/69965c2849ec9b7148a5547ce6714735--printable-musical-notes-musical-notes-art.jpg
 batman_run.gif: https://giphy.com/gifs/cartoon-batman-running-12MhwQm8toOEp2
+countdown.gif: https://thumbs.gfycat.com/WellmadeLinearIbadanmalimbe-small.gif
 
 SOUND CREDITS: 
 drum_kit: https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/

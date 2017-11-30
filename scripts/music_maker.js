@@ -11,6 +11,8 @@ var OBJECT_REFRESH_RATE = 50;   // ms
 var state = "initial";          // options: "initial" or "running"
 var mode  = "random";           // options: "random", "drum_kit", "techno", "piano", "tutorial"
 var prev_keys_queue = [];
+tutorial_animate = "";
+tutorial_mode_timeout = "";
 
 var animations = [  animate_top_down,
                     animate_bottom_up,
@@ -89,26 +91,22 @@ function update_queue(keypressed) {
     $("#prev_keys").text("Previous Keys Pressed: " + prev_keys_queue);
 }//end update_queue()
 
+
 function tutorial_mode() {
-    var this_img = $('#red_line');
+    var line = $('#red_line');
     var this_speed = 10;
+    line.css("left", "0px");
 
-    // randomly set vertical position
-    var starting_position = 100;
-    this_img.css("left", 0 + "px");
-
-    var img_animate = setInterval( function() {
-        this_img.css("left", parseInt(this_img.css("left")) + this_speed);
+    tutorial_animate = setInterval( function() {
+        line.css("left", parseInt(line.css("left")) + this_speed);
 
         // Check to see if the image has left the main window
-        if (parseInt(this_img.css('left')) > ($('#drums_1_img').width())) {
-            //this_img.remove();
-            this_img.css("left", 0);
-            tutorial_mode;
-            //clearInterval(img_animate);
+        if (parseInt(line.css('left')) > ($('#image_on_screen').width())) {
+            line.css("left", "0px");
         }//end if
     }, OBJECT_REFRESH_RATE);
-}
+}//end tutorial_mode()
+
 
 function change_mode() {
     mode = $(this).attr("id");
@@ -118,26 +116,30 @@ function change_mode() {
     reset_genre_borders();
     $("#" + mode).css("border", "5px solid yellow");
 
-    // remove piano img
-    $("#piano_img").css("visibility", "hidden");
+    // hide image on screen
+    $("#image_on_screen").attr("src", "");
 
-    // remove notes img
-    $("#drums_1_img").css("visibility", "hidden");
-    $("#tutorial_div").css("visibility", "hidden");
+    // hide/stop tutorial mode stuff
     $("#red_line").css("visibility", "hidden");
-
+    clearInterval(tutorial_animate);
+    clearTimeout(tutorial_mode_timeout);    
 
     // special modes
     if (mode === "tutorial") {
-        $("#drums_1_img").css("visibility", "visible");
-        $("#tutorial_div").css("visibility", "visible");
-        $("#red_line").css("visibility", "visible");
-        tutorial_mode();
+        // display countdown.gif for 3 seconds
+        $("#image_on_screen").attr("src", "./img/countdown.gif");
+        tutorial_mode_timeout = setTimeout(function() {   
+            $("#red_line").css("visibility", "visible");
+            $("#image_on_screen").attr("src", "./img/tutorial_drum_beat_1.jpg");
+            tutorial_mode();
+        }, 2800);
     }//end if tutorial
+
     if (mode === "piano") {
-        $("#piano_img").css("visibility", "visible");
+        $("#image_on_screen").attr("src", "./img/piano_keyboard.png");
     }//end if piano
 }//end change_mode()
+
 
 function reset_genre_borders() {
     // reset all .genre borders to 2px solid black
@@ -356,7 +358,14 @@ function exit() {
     // remove all images currently on screen
     $(".images").remove();
 
+    // hide image_on_screen stop red line animation
+    $("#image_on_screen").attr("src", "");
+    $("#red_line").css("visibility", "hidden");
+    clearInterval(tutorial_animate);
+    clearTimeout(tutorial_mode_timeout);
+
     // stop all sounds FIXME
+
 
     $("#prev_keys").hide();
     prev_keys_queue = [];
@@ -364,6 +373,11 @@ function exit() {
     // show main screen again
     $("#instructions").show();
     $("footer").css("visibility", "hidden");
+
+    // reset mode to random
+    mode = "random";
+    reset_genre_borders();
+    $("#" + mode).css("border", "5px solid yellow");
 
     state = "initial";
 }//end exit()
