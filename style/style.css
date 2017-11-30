@@ -102,6 +102,25 @@ footer {
     z-index: 2;
     visibility: hidden;     /* default */
 }
+#drums_1_img {
+    vertical-align: middle;
+ /*   text-align: center;*/
+    z-index: 4;
+    visibility: hidden;     /* default */
+}
+#red_line{
+    position: relative;
+    z-index: 5;
+    visibility: hidden;     /* default */
+    left:0px;
+}
+#tutorial_div {
+    vertical-align: middle;
+    /*max-width: 200px;*/
+    /*max-height: 200px;*/
+    z-index: 3;
+    visibility: hidden;
+}
 
 #prev_keys {
     text-align: center;
