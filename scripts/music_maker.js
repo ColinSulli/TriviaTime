@@ -89,6 +89,26 @@ function update_queue(keypressed) {
     $("#prev_keys").text("Previous Keys Pressed: " + prev_keys_queue);
 }//end update_queue()
 
+function tutorial_mode() {
+    var this_img = $('#red_line');
+    var this_speed = 10;
+
+    // randomly set vertical position
+    var starting_position = 100;
+    this_img.css("left", 0 + "px");
+
+    var img_animate = setInterval( function() {
+        this_img.css("left", parseInt(this_img.css("left")) + this_speed);
+
+        // Check to see if the image has left the main window
+        if (parseInt(this_img.css('left')) > ($('#drums_1_img').width())) {
+            //this_img.remove();
+            this_img.css("left", 0);
+            tutorial_mode;
+            //clearInterval(img_animate);
+        }//end if
+    }, OBJECT_REFRESH_RATE);
+}
 
 function change_mode() {
     mode = $(this).attr("id");
@@ -101,15 +121,23 @@ function change_mode() {
     // remove piano img
     $("#piano_img").css("visibility", "hidden");
 
+    // remove notes img
+    $("#drums_1_img").css("visibility", "hidden");
+    $("#tutorial_div").css("visibility", "hidden");
+    $("#red_line").css("visibility", "hidden");
+
+
     // special modes
     if (mode === "tutorial") {
-        // FIXME: call tutorial mode function
+        $("#drums_1_img").css("visibility", "visible");
+        $("#tutorial_div").css("visibility", "visible");
+        $("#red_line").css("visibility", "visible");
+        tutorial_mode();
     }//end if tutorial
     if (mode === "piano") {
         $("#piano_img").css("visibility", "visible");
     }//end if piano
 }//end change_mode()
-
 
 function reset_genre_borders() {
     // reset all .genre borders to 2px solid black
