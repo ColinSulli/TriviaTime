@@ -144,7 +144,7 @@ var master_dict = {
         D: "./audio/piano/E.wav",
         F: "./audio/piano/F.wav",
         G: "./audio/piano/G.wav",
-        H: "./audio/piano/A.wav",
+        H: "./audio/piano/A_twinkle.wav",
         J: "./audio/piano/B.wav",
 
         // black keys 

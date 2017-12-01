@@ -95,12 +95,9 @@ function update_queue(keypressed) {
 
 function tutorial_mode() {
     var line = $('#red_line');
-    var this_speed = 3.8;
-
-    // set red line to start at top left of sheet music
     line.css("left", "0px");
-    line.css("top", "10px");
-
+    var this_speed = 3.8;
+    
     var num_lines_traversed = 0;
     var new_css = ["top", "middle", "bottom"]; 
 
