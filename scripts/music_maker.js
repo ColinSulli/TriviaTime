@@ -11,8 +11,8 @@ var OBJECT_REFRESH_RATE = 40;   // ms
 var state = "initial";          // options: "initial" or "running"
 var mode  = "random";           // options: "random", "drum_kit", "techno", "piano", "tutorial"
 var prev_keys_queue = [];
-tutorial_animate = "";
-tutorial_mode_timeout = "";
+var tutorial_animate;
+var tutorial_mode_timeout;
 
 var animations = [  animate_top_down,
                     animate_bottom_up,
@@ -136,10 +136,7 @@ function change_mode() {
         $("#instructions").css("visibility", "visible");
     }//end if
 
-    // hide/stop tutorial mode stuff
-    $("#red_line").css("visibility", "hidden");
-    clearInterval(tutorial_animate);
-    clearTimeout(tutorial_mode_timeout);    
+    stop_tutorial_mode_animation();        
 
     // Change image_on_screen depending on mode
     if (mode === "random")   { $("#image_on_screen").attr("src", "./img/random.gif"); }
@@ -380,10 +377,7 @@ function exit() {
     // remove all images currently on screen
     $(".images").remove();
 
-    // stop tutorial mode & red line animation
-    $("#red_line").css("visibility", "hidden");
-    clearInterval(tutorial_animate);
-    clearTimeout(tutorial_mode_timeout);
+    stop_tutorial_mode_animation();
 
     $("#prev_keys").hide();
     prev_keys_queue = [];
@@ -400,6 +394,17 @@ function exit() {
 
     state = "initial";
 }//end exit()
+
+
+function stop_tutorial_mode_animation() {
+    // reset red_line css
+    $("#red_line").css("visibility", "hidden");
+    $("#red_line").css("vertical-align", "top");
+
+    // stop animations
+    clearInterval(tutorial_animate);
+    clearTimeout(tutorial_mode_timeout);
+}//end stop_tutorial_mode_animation()
 
 
 function play_random_sound() {
