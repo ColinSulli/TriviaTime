@@ -106,12 +106,12 @@ footer {
 }
 
 #red_line{
-
     position: relative;
     vertical-align: top;
+    top: 10px;          /* needed to properly align line with sheet music */
     z-index: 5;
     visibility: hidden; /* default */
-    height: 80px;
+    height: 70px;
     width: 6px;
 }
 
