@@ -87,7 +87,6 @@ footer {
     color: white;
 }
 
-
 /* MAIN SCREEN ITEMS */
 #main {
     height: 500px;
@@ -95,7 +94,6 @@ footer {
     font-size: 24px;
     text-align: center;
     vertical-align: middle;
-    /*border: 1px solid red;*/
 }
 
 .images {
@@ -108,10 +106,13 @@ footer {
 }
 
 #red_line{
+
     position: relative;
+    vertical-align: top;
     z-index: 5;
     visibility: hidden; /* default */
-    left: 0px;
+    height: 80px;
+    width: 6px;
 }
 
 #prev_keys {
@@ -120,10 +121,4 @@ footer {
     font-size: medium;
     line-height: 20px;
     vertical-align: bottom;
-}
-#image_on_screen2 {
-    position: absolute;
-    /*vertical-align: middle;*/
-    z-index: 5;
-    visibility: hidden;
 }

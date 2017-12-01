@@ -6,7 +6,7 @@ var img_idx = 0;
 // size and movement constants
 var MIN_IMG_SPEED = 3;
 var MAX_IMG_SPEED = 15;
-var OBJECT_REFRESH_RATE = 50;   // ms
+var OBJECT_REFRESH_RATE = 40;   // ms
 
 var state = "initial";          // options: "initial" or "running"
 var mode  = "random";           // options: "random", "drum_kit", "techno", "piano", "tutorial"
@@ -30,9 +30,6 @@ var animations = [  animate_top_down,
 
 $(document).ready( function() {
     console.log("Ready!");
-
-    //hide tutorial piano's piano
-    $("#image_on_screen2").css("visibility", "hidden");
 
     $("#random").click(change_mode);
     $("#drum_kit").click(change_mode);
@@ -98,15 +95,26 @@ function update_queue(keypressed) {
 
 function tutorial_mode() {
     var line = $('#red_line');
-    var this_speed = 7;
+    var this_speed = 3.8;
+
+    // set red line to start at top left of sheet music
     line.css("left", "0px");
+    line.css("top", "10px");
+
+    var num_lines_traversed = 0;
+    var new_css = ["top", "middle", "bottom"]; 
 
     tutorial_animate = setInterval( function() {
+        // move line from left to right
         line.css("left", parseInt(line.css("left")) + this_speed);
 
-        // Check to see if the image has left the main window
+        // Check to see if the image gone over the right edge of the image
         if (parseInt(line.css('left')) > ($('#image_on_screen').width())) {
+            num_lines_traversed = ++num_lines_traversed % 3;
+
+            // move red line to left of next line
             line.css("left", "0px");
+            line.css("vertical-align", new_css[num_lines_traversed]);
         }//end if
     }, OBJECT_REFRESH_RATE);
 }//end tutorial_mode()
@@ -114,7 +122,7 @@ function tutorial_mode() {
 
 function change_mode() {
     mode = $(this).attr("id");
-    console.log("mode changed to", mode);
+    // console.log("mode changed to", mode);
 
     // reset all borders, then highlight mode selected
     reset_genre_borders();
@@ -134,48 +142,24 @@ function change_mode() {
     clearTimeout(tutorial_mode_timeout);    
 
     // Change image_on_screen depending on mode
-    if (mode === "random")   { $("#image_on_screen").attr("src", "./img/random.gif");  
-        //hide tutorial piano's piano
-        $("#image_on_screen2").css("visibility", "hidden");}
-    if (mode === "drum_kit") { $("#image_on_screen").attr("src", "./img/drums.png"); 
-        //hide tutorial piano's piano
-        $("#image_on_screen2").css("visibility", "hidden");}
+    if (mode === "random")   { $("#image_on_screen").attr("src", "./img/random.gif"); }
+    if (mode === "drum_kit") { $("#image_on_screen").attr("src", "./img/drums.png"); }
     if (mode === "techno")   { $("#image_on_screen").attr("src", "./img/techno.jpg"); }
-        //hide tutorial piano's piano
-        $("#image_on_screen2").css("visibility", "hidden");
-    if (mode === "piano")    { $("#image_on_screen").attr("src", "./img/piano_keyboard.png"); 
-        //hide tutorial piano's piano
-        $("#image_on_screen2").css("visibility", "hidden");}
+    if (mode === "piano")    { $("#image_on_screen").attr("src", "./img/piano_keyboard.png"); }
     
     // clicking the Tutorial box automatically puts the user into an interactive mode
     if (mode === "tutorial") {
-
-        //hide tutorial piano's piano
-        $("#image_on_screen2").css("visibility", "hidden");
-
         // hide instructions, show [Esc] to exit, display countdown.gif for 3 seconds
         $("#instructions").css("visibility", "hidden");
         $("footer").css("visibility", "visible");
         $("#image_on_screen").attr("src", "./img/countdown.gif");
-        tutorial_mode_timeout = setTimeout(function() {   
-            $("#red_line").css("visibility", "visible");
-            $("#image_on_screen").attr("src", "./img/drum_sheet_music_good.jpg");
-            tutorial_mode();
-        }, 2700);
-    }//end if tutorial
-    if (mode === "tutorial2") {
-        // hide instructions, show [Esc] to exit, display countdown.gif for 3 seconds
-        $("#instructions").css("visibility", "hidden");
-        $("footer").css("visibility", "visible");
-        $("#image_on_screen").attr("src", "./img/countdown.gif");
-        tutorial_mode_timeout = setTimeout(function() {   
-            $("#image_on_screen2").css("visibility", "visible");
-            $("#red_line").css("visibility", "visible");
-            $("#image_on_screen").attr("src", "./img/tutorial_drum_beat_1.jpg");
-            tutorial_mode();
-        }, 2700);
-    }//end if tutorial
 
+        tutorial_mode_timeout = setTimeout(function() {   
+            $("#red_line").css("visibility", "visible");
+            $("#image_on_screen").attr("src", "./img/twinkle.png");
+            tutorial_mode();
+        }, 2650);
+    }//end if tutorial
 }//end change_mode()
 
 
@@ -400,12 +384,6 @@ function exit() {
     $("#red_line").css("visibility", "hidden");
     clearInterval(tutorial_animate);
     clearTimeout(tutorial_mode_timeout);
-
-    //hide the tutorial piano's piano
-    $("#image_on_screen2").css("visibility", "hidden");
-
-    // stop all sounds FIXME
-
 
     $("#prev_keys").hide();
     prev_keys_queue = [];

@@ -137,47 +137,7 @@ var master_dict = {
         U: "./audio/piano/Asharp.wav"
     },//end piano
 
-    // FIXME: add tutorial - should probably just use piano keys
     tutorial: {
-        0: "./audio/drum_kit/kick/kick08.wav", 
-        1: "./audio/drum_kit/kick/kick09.wav", 
-        2: "./audio/drum_kit/kick/kick10.wav", 
-        3: "./audio/drum_kit/kick/kick11.wav", 
-        4: "./audio/drum_kit/kick/kick12.wav", 
-        5: "./audio/drum_kit/snare/snare 10.wav", 
-        6: "./audio/drum_kit/snare/snare 11.wav", 
-        7: "./audio/drum_kit/snare/snare 12.wav", 
-        8: "./audio/drum_kit/snare/snare 13.wav", 
-        9: "./audio/drum_kit/snare/snare 14.wav", 
-        A: "./audio/drum_kit/snare/snare 01.wav", 
-        B: "./audio/drum_kit/kick/kick01.wav", 
-        C: "./audio/drum_kit/kick/kick02.wav", 
-        D: "./audio/drum_kit/snare/snare 02.wav", 
-        E: "./audio/drum_kit/hats/hat 01.wav", 
-        F: "./audio/drum_kit/snare/snare 03.wav", 
-        G: "./audio/drum_kit/snare/snare 04.wav", 
-        H: "./audio/drum_kit/snare/snare 05.wav", 
-        I: "./audio/drum_kit/hats/hat 02.wav", 
-        J: "./audio/drum_kit/snare/snare 06.wav", 
-        K: "./audio/drum_kit/snare/snare 07.wav", 
-        L: "./audio/drum_kit/snare/snare 08.wav", 
-        M: "./audio/drum_kit/kick/kick03.wav", 
-        N: "./audio/drum_kit/kick/kick04.wav", 
-        O: "./audio/drum_kit/hats/hat 03.wav", 
-        P: "./audio/drum_kit/hats/hat 04.wav", 
-        Q: "./audio/drum_kit/hats/hat 05.wav", 
-        R: "./audio/drum_kit/hats/hat 06.wav", 
-        S: "./audio/drum_kit/snare/snare 09.wav", 
-        T: "./audio/drum_kit/hats/hat 07.wav", 
-        U: "./audio/drum_kit/hats/hat 08.wav", 
-        V: "./audio/drum_kit/kick/kick05.wav", 
-        W: "./audio/drum_kit/hats/hat 09.wav", 
-        X: "./audio/drum_kit/kick/kick06.wav",
-        Y: "./audio/drum_kit/hats/hat 10.wav", 
-        Z: "./audio/drum_kit/kick/kick07.wav"
-    },//end tutorial
-
-    tutorial2: {
         // white keys
         A: "./audio/piano/C.wav",
         S: "./audio/piano/D.wav",
@@ -220,7 +180,7 @@ var master_dict = {
         K: "./audio/extra/galanghee.wav", 
         L: "./audio/extra/correct.wav", 
         M: "./audio/extra/idea.wav", 
-        N: "./audio/extra/teeth_chatter.wav", 
+        N: "./audio/extra/teeth_chatter.wav",
         O: "./audio/extra/bb_gun.wav", 
         P: "./audio/extra/quack.wav", 
         Q: "./audio/extra/weird1.mp3", 
