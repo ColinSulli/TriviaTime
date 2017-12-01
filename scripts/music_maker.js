@@ -129,7 +129,12 @@ function change_mode() {
     clearInterval(tutorial_animate);
     clearTimeout(tutorial_mode_timeout);    
 
-    // SPECIAL MODES
+    // Change image_on_screen depending on mode
+    if (mode === "random")   { $("#image_on_screen").attr("src", "./img/random.gif"); }
+    if (mode === "drum_kit") { $("#image_on_screen").attr("src", "./img/drums.png"); }
+    if (mode === "techno")   { $("#image_on_screen").attr("src", "./img/techno.jpg"); }
+    if (mode === "piano")    { $("#image_on_screen").attr("src", "./img/piano_keyboard.png"); }
+    
     // clicking the Tutorial box automatically puts the user into an interactive mode
     if (mode === "tutorial") {
         // hide instructions, show [Esc] to exit, display countdown.gif for 3 seconds
@@ -143,9 +148,6 @@ function change_mode() {
         }, 2700);
     }//end if tutorial
 
-    if (mode === "piano") {
-        $("#image_on_screen").attr("src", "./img/piano_keyboard.png");
-    }//end if piano
 }//end change_mode()
 
 
@@ -366,8 +368,7 @@ function exit() {
     // remove all images currently on screen
     $(".images").remove();
 
-    // hide image_on_screen stop red line animation
-    $("#image_on_screen").attr("src", "");
+    // stop tutorial mode & red line animation
     $("#red_line").css("visibility", "hidden");
     clearInterval(tutorial_animate);
     clearTimeout(tutorial_mode_timeout);
@@ -386,6 +387,7 @@ function exit() {
     mode = "random";
     reset_genre_borders();
     $("#" + mode).css("border", "5px solid yellow");
+    $("#image_on_screen").attr("src", "./img/random.gif");
 
     state = "initial";
 }//end exit()

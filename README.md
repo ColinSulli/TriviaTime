@@ -65,6 +65,10 @@ Music_Maker.png: http://clipart-library.com/clipart/8TxrGebyc.htm
 Favicon.ico: https://i.pinimg.com/736x/69/96/5c/69965c2849ec9b7148a5547ce6714735--printable-musical-notes-musical-notes-art.jpg
 batman_run.gif: https://giphy.com/gifs/cartoon-batman-running-12MhwQm8toOEp2
 countdown.gif: https://thumbs.gfycat.com/WellmadeLinearIbadanmalimbe-small.gif
+techno cat: https://data.whicdn.com/images/141160851/large.jpg
+random.gif: http://vignette1.wikia.nocookie.net/survivor-org/images/0/0d/Utgp1.gif/revision/latest?cb=20141221070322
+drum kit: http://clipart-library.com/clipart/BcgrKrxc8.htm
+
 
 SOUND CREDITS: 
 all drum sounds: https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/
