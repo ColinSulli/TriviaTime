@@ -81,6 +81,11 @@ footer {
     background: purple;
     color: white;
 }
+#tutorial2 {
+    border: 2px solid black;
+    background: grey;
+    color: white;
+}
 
 
 /* MAIN SCREEN ITEMS */
@@ -115,4 +120,10 @@ footer {
     font-size: medium;
     line-height: 20px;
     vertical-align: bottom;
+}
+#image_on_screen2 {
+    position: absolute;
+    /*vertical-align: middle;*/
+    z-index: 5;
+    visibility: hidden;
 }
