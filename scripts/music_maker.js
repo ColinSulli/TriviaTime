@@ -55,7 +55,7 @@ function keydown_router(e) {
 
     // transition from Start screen to Interactive one on first keypress
     if (state === "initial") {
-        $("#instructions").hide();
+        $("#instructions").css("visibility", "hidden");
         $("#prev_keys").show();
         $("footer").css("visibility", "visible");
         state = "running";
@@ -119,20 +119,28 @@ function change_mode() {
     // hide image on screen
     $("#image_on_screen").attr("src", "");
 
+    // re-display instructions if state === "initial"
+    if (state === "initial") {
+        $("#instructions").css("visibility", "visible");
+    }//end if
+
     // hide/stop tutorial mode stuff
     $("#red_line").css("visibility", "hidden");
     clearInterval(tutorial_animate);
     clearTimeout(tutorial_mode_timeout);    
 
-    // special modes
+    // SPECIAL MODES
+    // clicking the Tutorial box automatically puts the user into an interactive mode
     if (mode === "tutorial") {
-        // display countdown.gif for 3 seconds
+        // hide instructions, show [Esc] to exit, display countdown.gif for 3 seconds
+        $("#instructions").css("visibility", "hidden");
+        $("footer").css("visibility", "visible");
         $("#image_on_screen").attr("src", "./img/countdown.gif");
         tutorial_mode_timeout = setTimeout(function() {   
             $("#red_line").css("visibility", "visible");
             $("#image_on_screen").attr("src", "./img/tutorial_drum_beat_1.jpg");
             tutorial_mode();
-        }, 2800);
+        }, 2700);
     }//end if tutorial
 
     if (mode === "piano") {
@@ -371,7 +379,7 @@ function exit() {
     prev_keys_queue = [];
 
     // show main screen again
-    $("#instructions").show();
+    $("#instructions").css("visibility", "visible");
     $("footer").css("visibility", "hidden");
 
     // reset mode to random

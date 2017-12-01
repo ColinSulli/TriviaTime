@@ -4,6 +4,7 @@ FEATURES:
 1. Start Screen: 
     - The user can select a "mode" which will change which sounds/tones are played for each key. The user can also change modes while in interactive mode. 
     - Once the user presses an alphanumeric key, the interactive mode is initiated.
+    - NOTE: selecting "Tutorial" mode will automatically put the user into the interactive tutorial after a short countdown.
     - 
 
 2. Interactivity: 
@@ -19,6 +20,7 @@ FEATURES:
         - Piano mode only uses certain keys and replicates a real (miniature) piano--an image showing users what to do is displayed when Piano mode is selected.
         - Users can press any key to see an animation, but only the keys shown in the piano image will actually play sounds.
     - TUTORIAL: 
+        - Selecting "Tutorial" mode will automatically put the user into the interactive tutorial after a short countdown.
         - 
 
 
@@ -65,7 +67,7 @@ batman_run.gif: https://giphy.com/gifs/cartoon-batman-running-12MhwQm8toOEp2
 countdown.gif: https://thumbs.gfycat.com/WellmadeLinearIbadanmalimbe-small.gif
 
 SOUND CREDITS: 
-drum_kit: https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/
+all drum sounds: https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/
 all piano keys: https://freesound.org/people/pinkyfinger/packs/4409/
 techno sounds: https://www.samplephonics.com/products/free/deep-house/deep-melodic-house-freebie
 Sounds used in "random mode" are taken from the above sources or the sources listed below:
