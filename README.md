@@ -68,6 +68,7 @@ countdown.gif: https://thumbs.gfycat.com/WellmadeLinearIbadanmalimbe-small.gif
 techno cat: https://data.whicdn.com/images/141160851/large.jpg
 random.gif: http://vignette1.wikia.nocookie.net/survivor-org/images/0/0d/Utgp1.gif/revision/latest?cb=20141221070322
 drum kit: http://clipart-library.com/clipart/BcgrKrxc8.htm
+twinkle.png: https://upload.wikimedia.org/wikipedia/commons/1/16/Twinkle_Twinkle_Little_Star.png
 
 
 SOUND CREDITS: 
