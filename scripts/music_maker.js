@@ -116,8 +116,8 @@ function change_mode() {
     reset_genre_borders();
     $("#" + mode).css("border", "5px solid yellow");
 
-    // hide image on screen
-    $("#image_on_screen").attr("src", "");
+    // hide "[Esc] to exit" (in case prev mode was "tutorial")
+    $("footer").css("visibility", "hidden");
 
     // re-display instructions if state === "initial"
     if (state === "initial") {
