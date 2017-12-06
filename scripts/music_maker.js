@@ -40,6 +40,7 @@ $(document).ready( function() {
     $("#techno").click(change_mode);
     $("#piano").click(change_mode);
     $("#tutorial").click(change_mode);
+    
     $("#start_tutorial").click( function() {
                                     if (tutorial_state === "initial") { return start_tutorial_mode(); }
                                     if (tutorial_state === "running") { return pause_tutorial_mode(); }
