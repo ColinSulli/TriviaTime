@@ -102,10 +102,6 @@ function update_queue(keypressed) {
 function start_tutorial_mode() {
     tutorial_state = "running";
 
-    // FIXME: for testing
-    console.log("tutorial state =", tutorial_state);
-    console.log("in function: start_tutorial_mode()");
-
     // change Start button and show [Esc] to exit
     $("#start_tutorial").text("Pause Tutorial");
     $("footer").css("visibility", "visible");
@@ -165,11 +161,6 @@ function change_mode() {
     mode = $(this).attr("id");
     tutorial_state = "initial";
     num_lines_traversed = 0;
-    // console.log("mode changed to", mode);
-
-    // FIXME: for testing
-    console.log("tutorial state =", tutorial_state);
-    console.log("in function: start_tutorial_mode()");
 
     // reset all borders, then highlight mode selected
     reset_genre_borders();
@@ -259,12 +250,11 @@ function animate_bottom_up(image_id) {
     this_img.css("left", starting_position + "px");
 
     // make image start at bottom of main screen
-    //console.log("top for main: !!!  "+ parseInt($("#main").height()));
     this_img.css("top", $("#main").height());
 
     var img_animate = setInterval( function() {
         this_img.css("top", parseInt(this_img.css('top')) - this_speed);
-        //console.log("top "+parseInt(this_img.css('top')));
+
         if (parseInt(this_img.css('top')) <= 80) {
             this_img.remove();
             clearInterval(img_animate);
@@ -457,12 +447,10 @@ function play_random_sound() {
     // select a random mode to get a sound from
     var modes = ["drum_kit", "techno", "piano", "extra"];
     var random_mode = modes[Math.floor(Math.random() * modes.length)];
-    // console.log("random mode =", random_mode);
 
     // select a random key to get a sound from
     var keys = Object.keys(master_dict[random_mode]);
     var random_key = keys[Math.floor(Math.random() * keys.length)];
-    // console.log("random key =", random_key);
 
     var sound = master_dict[random_mode][random_key];
     var audio = new Audio(sound);
