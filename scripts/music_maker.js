@@ -2,11 +2,14 @@
 
 // counters
 var img_idx = 0;
+var acker_img_index = 0;
 
 // size and movement constants
 var MIN_IMG_SPEED = 3;
 var MAX_IMG_SPEED = 15;
 var OBJECT_REFRESH_RATE = 40;   // ms
+
+var ACKERMODE;
 
 var state = "initial";          // options: "initial" or "running"
 var mode  = "random";           // options: "random", "drum_kit", "techno", "piano", "tutorial"
@@ -75,6 +78,8 @@ function keydown_router(e) {
         exit();
         return;
     }//end if
+
+    check_for_ackermode(keypressed);
 
     create_image(master_dict["images"][keypressed]);
 
@@ -474,3 +479,43 @@ function get_random_num(min, max) {
     // https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
     return Math.floor(Math.random() * (max - min) + min);
 }//end get_random_num()
+
+
+function check_for_ackermode(key) {
+    var ACKERMAN = "ACKERMAN";
+
+    // only check if they type N (last letter of ACKERMAN)
+    if (key !== "N") {
+        return;
+    }//end if
+
+    // check previous letters in queue
+    var first_letter_to_check = prev_keys_queue.length - ACKERMAN.length;
+    var acker_idx = 0;
+    for (var i = first_letter_to_check; i < prev_keys_queue.length; ++i) {
+
+        // if any letter does not match, exit
+        if (prev_keys_queue[i] !== ACKERMAN[acker_idx]) {
+            return;
+        }//end if
+
+        ++acker_idx;
+    }//end for i
+
+    console.log("ACKERMODE INITIATED!");
+
+    // create Prof. Ackerman image and append to HTML
+    acker_img_id = "acker-img-" + acker_img_index;
+    var acker_img_div = "<div id='" + acker_img_id + "' class='images'></div>";
+    $('#main').append(acker_img_div);
+    acker_img_index++;
+    $("#" + acker_img_id).append("<img src='./img/ackerman.png'/>");
+
+    // play an Ackerman sound
+    // FIXME
+
+    // randomly animate image
+    var random_animation_func = get_random_num(0, animations.length);
+    var this_animation = animations[random_animation_func];
+    this_animation(acker_img_id);
+}//end check_for_ackermode()
