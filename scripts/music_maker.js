@@ -89,7 +89,7 @@ function update_queue(keypressed) {
         var remove = prev_keys_queue.shift();
     }//end if
 
-    $("#prev_keys").text(prev_keys_queue + " <-- Most Recent Key Pressed");
+    $("#prev_keys").text(prev_keys_queue + " \u2190 Most Recent Key Pressed");
 }//end update_queue()
 
 
@@ -138,6 +138,8 @@ function change_mode() {
     }//end if
 
     $("#start_tutorial").css("visibility", "hidden");
+    $("#red_line").css("left", "0px");
+    $("#red_line").css("vertical-align", "top");
     stop_tutorial_mode_animation();        
 
     // Change image_on_screen depending on mode
