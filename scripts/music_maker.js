@@ -36,7 +36,7 @@ $(document).ready( function() {
     $("#techno").click(change_mode);
     $("#piano").click(change_mode);
     $("#tutorial").click(change_mode);
-    $("#tutorial2").click(change_mode);
+    $("#start_tutorial").click(tutorial_mode);
 
     $(window).keydown(keydown_router);
 });//end document.ready()
@@ -89,11 +89,15 @@ function update_queue(keypressed) {
         var remove = prev_keys_queue.shift();
     }//end if
 
-    $("#prev_keys").text("Previous Keys Pressed: " + prev_keys_queue);
+    $("#prev_keys").text(prev_keys_queue + " <-- Most Recent Key Pressed");
 }//end update_queue()
 
 
 function tutorial_mode() {
+    // hide Start button and show [Esc] to exit
+    $("#start_tutorial").css("visibility", "hidden");
+    $("footer").css("visibility", "visible");
+
     var line = $('#red_line');
     line.css("left", "0px");
     var this_speed = 3.8;
@@ -133,6 +137,7 @@ function change_mode() {
         $("#instructions").css("visibility", "visible");
     }//end if
 
+    $("#start_tutorial").css("visibility", "hidden");
     stop_tutorial_mode_animation();        
 
     // Change image_on_screen depending on mode
@@ -141,21 +146,14 @@ function change_mode() {
     if (mode === "techno")   { $("#image_on_screen").attr("src", "./img/techno.jpg"); }
     if (mode === "piano")    { $("#image_on_screen").attr("src", "./img/piano_keyboard.png"); }
     
-    // clicking the Tutorial box automatically puts the user into an interactive mode
     if (mode === "tutorial") {
-        // hide instructions, show [Esc] to exit, display countdown.gif for 3 seconds
+        // hide instructions, show Start button with Sheet Music & red line
         $("#instructions").css("visibility", "hidden");
-        $("footer").css("visibility", "visible");
-        $("#image_on_screen").attr("src", "./img/countdown.gif");
-
-        tutorial_mode_timeout = setTimeout(function() {   
-            $("#red_line").css("visibility", "visible");
-            $("#image_on_screen").attr("src", "./img/twinkle.png");
-            tutorial_mode();
-        }, 2650);
+        $("#start_tutorial").css("visibility", "visible");
+        $("#image_on_screen").attr("src", "./img/twinkle.png");
+        $("#red_line").css("visibility", "visible");
     }//end if tutorial
 }//end change_mode()
-
 
 function reset_genre_borders() {
     // reset all .genre borders to 2px solid black
@@ -374,6 +372,7 @@ function exit() {
     // remove all images currently on screen
     $(".images").remove();
 
+    $("#start_tutorial").css("visibility", "hidden");
     stop_tutorial_mode_animation();
 
     $("#prev_keys").hide();

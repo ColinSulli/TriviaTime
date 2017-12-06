@@ -81,11 +81,7 @@ footer {
     background: purple;
     color: white;
 }
-#tutorial2 {
-    border: 2px solid black;
-    background: grey;
-    color: white;
-}
+
 
 /* MAIN SCREEN ITEMS */
 #main {
@@ -103,6 +99,11 @@ footer {
 #img_div {
     vertical-align: middle;
     z-index: 2;
+}
+
+#start_tutorial {
+    visibility: hidden; /* default */
+    font-size: 16px;
 }
 
 #red_line{
