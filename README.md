@@ -4,24 +4,23 @@ FEATURES:
 1. Start Screen: 
     - The user can select a "mode" which will change which sounds/tones are played for each key. The user can also change modes while in interactive mode. 
     - Once the user presses an alphanumeric key, the interactive mode is initiated.
-    - NOTE: selecting "Tutorial" mode will automatically put the user into the interactive tutorial after a short countdown.
-    - 
+    - NOTE: Tutorial mode requires the user to click a Start button when they're ready to begin. This gives them a chance to preview the sheet music and figure out what they're expected to do before it starts. 
 
 2. Interactivity: 
     - Each keypress uses the same image for all modes (ex: "S" always uses "squiggle.gif" in its animation).
       - NOTE: All alphanumeric keys work ([a-Z] & [0-9]), but if you're using the keys on the number pad, you MUST have NumLock enabled.
     - Each animation of these images (direction, speed) will be random and where the image is generated on the screen is also random. 
     - "Hit [Esc] to exit" is clearly displayed at the bottom of the page so the user can go back to the start screen without having to refresh.
-    - We have also implemented a "Previous Keys Pressed" queue so if the user hits a sequence of keys that they like, they can repeat it by looking at their "history."
-    - 
+    - We have also implemented a "Previous Keys" queue so if the user hits a sequence of keys that they like, they can repeat it by looking at their "history."
 
 3. Special Modes:
     - PIANO: 
         - Piano mode only uses certain keys and replicates a real (miniature) piano--an image showing users what to do is displayed when Piano mode is selected.
-        - Users can press any key to see an animation, but only the keys shown in the piano image will actually play sounds.
+        - NOTE: Users can press any key to see an animation, but only the keys shown in the piano image will actually play sounds.
     - TUTORIAL: 
-        - Selecting "Tutorial" mode will automatically put the user into the interactive tutorial after a short countdown.
-        - 
+        - Tutorial mode teaches the user to play "Twinkle, Twinkle, Little Star" by pressing certain keyboard keys that correspond to the notes in the song. The user just needs to follow the moving red bar and hit the notes as the bar passes over them. The bar moves slower than the song is actually played to account for novice and younger users that may not be familiar with the keyboard.
+        - Users are also able to pause and unpause the tutorial if they need to.
+        - Changing modes or hitting the Escape key will reset tutorial mode (move red bar to beginning of song).
 
 
 IMAGE CREDITS: 
