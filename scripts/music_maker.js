@@ -33,6 +33,8 @@ var animations = [  animate_top_down,
 $(document).ready( function() {
     console.log("Ready!");
 
+    $("#logo").click(exit);
+
     $("#random").click(change_mode);
     $("#drum_kit").click(change_mode);
     $("#techno").click(change_mode);
@@ -174,6 +176,7 @@ function change_mode() {
         $("#instructions").css("visibility", "visible");
     }//end if
 
+    // reset "tutorial mode" stuff
     $("#start_tutorial").css("visibility", "hidden");
     $("#start_tutorial").text("Start Tutorial");
     $("#red_line").css("left", "0px");
@@ -424,12 +427,12 @@ function exit() {
 
     // reset mode to random
     mode = "random";
-    tutorial_state = "initial";
     reset_genre_borders();
     $("#" + mode).css("border", "5px solid yellow");
     $("#image_on_screen").attr("src", "./img/random.gif");
 
     state = "initial";
+    tutorial_state = "initial";
 }//end exit()
 
 

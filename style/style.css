@@ -22,6 +22,10 @@ footer {
 }
 
 /* MENU BAR ITEMS */
+#logo {
+    cursor: pointer;
+}
+
 .row {
     align-content: center;
 }
