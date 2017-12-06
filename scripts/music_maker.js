@@ -9,8 +9,6 @@ var MIN_IMG_SPEED = 3;
 var MAX_IMG_SPEED = 15;
 var OBJECT_REFRESH_RATE = 40;   // ms
 
-var ACKERMODE;
-
 var state = "initial";          // options: "initial" or "running"
 var mode  = "random";           // options: "random", "drum_kit", "techno", "piano", "tutorial"
 var prev_keys_queue = [];
@@ -482,14 +480,14 @@ function get_random_num(min, max) {
 
 
 function check_for_ackermode(key) {
-    var ACKERMAN = "ACKERMAN";
-
     // only check if they type N (last letter of ACKERMAN)
     if (key !== "N") {
         return;
     }//end if
 
-    // check previous letters in queue
+    var ACKERMAN = "ACKERMAN";
+
+    // make sure the last keys they hit were A-C-K-E-R-M-A-N, in that order
     var first_letter_to_check = prev_keys_queue.length - ACKERMAN.length;
     var acker_idx = 0;
     for (var i = first_letter_to_check; i < prev_keys_queue.length; ++i) {
@@ -502,6 +500,7 @@ function check_for_ackermode(key) {
         ++acker_idx;
     }//end for i
 
+    // if we made it out of the for loop without returning, we're in ACKERMODE
     console.log("ACKERMODE INITIATED!");
 
     // create Prof. Ackerman image and append to HTML
@@ -513,9 +512,24 @@ function check_for_ackermode(key) {
 
     // play an Ackerman sound
     // FIXME
+    var acker_tones = [ "./audio/Ackerman/FIXME.mp3",
+                        // "./audio/Ackerman/FIXME.mp3",
+                        // "./audio/Ackerman/FIXME.mp3",
+                        // "./audio/Ackerman/FIXME.mp3",
+                        // "./audio/Ackerman/FIXME.mp3",
+                        // "./audio/Ackerman/FIXME.mp3",
+                        // "./audio/Ackerman/FIXME.mp3",
+                        "./audio/Ackerman/FIXME.mp3"
+                      ];
+    var sound = acker_tones[Math.floor(Math.random() * acker_tones.length)];
+    var audio = new Audio(sound);
+    audio.play();
 
     // randomly animate image
-    var random_animation_func = get_random_num(0, animations.length);
-    var this_animation = animations[random_animation_func];
-    this_animation(acker_img_id);
+    // var random_animation_func = get_random_num(0, animations.length);
+    // var this_animation = animations[random_animation_func];
+    // this_animation(acker_img_id);
+
+    // just have him pop up quickly
+    random_pop_up(acker_img_id);
 }//end check_for_ackermode()
