@@ -12,7 +12,9 @@ var state = "initial";          // options: "initial" or "running"
 var mode  = "random";           // options: "random", "drum_kit", "techno", "piano", "tutorial"
 var prev_keys_queue = [];
 var tutorial_animate;
-var tutorial_mode_timeout;
+var tutorial_state = "initial"; // options: "intitial", "running", "pause"
+var tutorial_speed = 3.8;
+var num_lines_traversed = 0;
 
 var animations = [  animate_top_down,
                     animate_bottom_up,
@@ -36,7 +38,11 @@ $(document).ready( function() {
     $("#techno").click(change_mode);
     $("#piano").click(change_mode);
     $("#tutorial").click(change_mode);
-    $("#start_tutorial").click(tutorial_mode);
+    $("#start_tutorial").click( function() {
+                                    if (tutorial_state === "initial") { return start_tutorial_mode(); }
+                                    if (tutorial_state === "running") { return pause_tutorial_mode(); }
+                                    if (tutorial_state === "pause")   { return unpause_tutorial_mode(); }
+                                });
 
     $(window).keydown(keydown_router);
 });//end document.ready()
@@ -50,7 +56,7 @@ function keydown_router(e) {
 
     // make sure they pressed a key in KEYS dictionary
     if (!(e.which in KEYS)) {
-        console.log(e.which, "is not a key in the KEYS dictionary");
+        // console.log(e.which, "is not a key in the KEYS dictionary");
         return;
     }//end if
 
@@ -93,21 +99,55 @@ function update_queue(keypressed) {
 }//end update_queue()
 
 
-function tutorial_mode() {
-    // hide Start button and show [Esc] to exit
-    $("#start_tutorial").css("visibility", "hidden");
+function start_tutorial_mode() {
+    tutorial_state = "running";
+
+    // FIXME: for testing
+    console.log("tutorial state =", tutorial_state);
+    console.log("in function: start_tutorial_mode()");
+
+    // change Start button and show [Esc] to exit
+    $("#start_tutorial").text("Pause Tutorial");
     $("footer").css("visibility", "visible");
 
     var line = $('#red_line');
     line.css("left", "0px");
-    var this_speed = 3.8;
     
-    var num_lines_traversed = 0;
     var new_css = ["top", "middle", "bottom"]; 
 
     tutorial_animate = setInterval( function() {
         // move line from left to right
-        line.css("left", parseInt(line.css("left")) + this_speed);
+        line.css("left", parseInt(line.css("left")) + tutorial_speed);
+
+        // Check to see if the image gone over the right edge of the image
+        if (parseInt(line.css('left')) > ($('#image_on_screen').width())) {
+            num_lines_traversed = ++num_lines_traversed % 3;
+
+            // move red line to left of next line
+            line.css("left", "0px");
+            line.css("vertical-align", new_css[num_lines_traversed]);
+        }//end if
+    }, OBJECT_REFRESH_RATE);
+}//end tutorial_mode()
+
+
+function pause_tutorial_mode() {
+    tutorial_state = "pause";
+    $("#start_tutorial").text("Unpause Tutorial");
+    clearInterval(tutorial_animate);
+}//end tutorial_mode()
+
+
+function unpause_tutorial_mode() {
+    tutorial_state = "running";
+
+    $("#start_tutorial").text("Pause Tutorial");
+    var line = $('#red_line');
+    var new_css = ["top", "middle", "bottom"]; 
+
+    tutorial_animate = setInterval( function() {
+        // move line from left to right
+        line.css("left", parseInt(line.css("left")) + tutorial_speed);
 
         // Check to see if the image gone over the right edge of the image
         if (parseInt(line.css('left')) > ($('#image_on_screen').width())) {
@@ -123,7 +163,13 @@ function tutorial_mode() {
 
 function change_mode() {
     mode = $(this).attr("id");
+    tutorial_state = "initial";
+    num_lines_traversed = 0;
     // console.log("mode changed to", mode);
+
+    // FIXME: for testing
+    console.log("tutorial state =", tutorial_state);
+    console.log("in function: start_tutorial_mode()");
 
     // reset all borders, then highlight mode selected
     reset_genre_borders();
@@ -138,6 +184,7 @@ function change_mode() {
     }//end if
 
     $("#start_tutorial").css("visibility", "hidden");
+    $("#start_tutorial").text("Start Tutorial");
     $("#red_line").css("left", "0px");
     $("#red_line").css("vertical-align", "top");
     stop_tutorial_mode_animation();        
@@ -156,6 +203,7 @@ function change_mode() {
         $("#red_line").css("visibility", "visible");
     }//end if tutorial
 }//end change_mode()
+
 
 function reset_genre_borders() {
     // reset all .genre borders to 2px solid black
@@ -386,6 +434,7 @@ function exit() {
 
     // reset mode to random
     mode = "random";
+    tutorial_state = "initial";
     reset_genre_borders();
     $("#" + mode).css("border", "5px solid yellow");
     $("#image_on_screen").attr("src", "./img/random.gif");
@@ -401,7 +450,6 @@ function stop_tutorial_mode_animation() {
 
     // stop animations
     clearInterval(tutorial_animate);
-    clearTimeout(tutorial_mode_timeout);
 }//end stop_tutorial_mode_animation()
 
 
