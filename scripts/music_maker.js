@@ -122,8 +122,11 @@ function start_tutorial_mode() {
         if (parseInt(line.css('left')) > ($('#image_on_screen').width())) {
             num_lines_traversed = ++num_lines_traversed % 3;
 
+            // start red line at FAR left for top line, ON sheet music for lines 2 & 3
+            var next_line_left = (num_lines_traversed === 0) ? "0px" : "50px";
+
             // move red line to left of next line
-            line.css("left", "0px");
+            line.css("left", next_line_left);
             line.css("vertical-align", new_css[num_lines_traversed]);
         }//end if
     }, OBJECT_REFRESH_RATE);
@@ -152,8 +155,11 @@ function unpause_tutorial_mode() {
         if (parseInt(line.css('left')) > ($('#image_on_screen').width())) {
             num_lines_traversed = ++num_lines_traversed % 3;
 
+            // start red line at FAR left for top line, ON sheet music for lines 2 & 3
+            var next_line_left = (num_lines_traversed === 0) ? "0px" : "50px";
+
             // move red line to left of next line
-            line.css("left", "0px");
+            line.css("left", next_line_left);
             line.css("vertical-align", new_css[num_lines_traversed]);
         }//end if
     }, OBJECT_REFRESH_RATE);
