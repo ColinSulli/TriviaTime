@@ -545,15 +545,13 @@ function check_for_ackermode(key) {
     var audio = new Audio(sound);
     audio.play();
 
-    // Display image
     var this_img = $('#' + acker_img_id);
 
     // randomly set pop-up location
-    var starting_positionW = (Math.random() + 0.2) * ($("#main").width()  - this_img.width());
-    var starting_positionH = (Math.random() + 0.2) * ($("#main").height() - this_img.height());
-
-    this_img.css("left", starting_positionW + "px");
-    this_img.css("top",  starting_positionH + "px");
+    var starting_positionW = get_random_num(20, ($("#main").width()  - this_img.width()));
+    var starting_positionH = get_random_num(20, ($("#main").height() - this_img.height()));
+    this_img.css("left",    starting_positionW + "px");
+    this_img.css("bottom",  starting_positionH + "px");
 
     // display his image with quote for 1.8 seconds
     setTimeout(function() {
