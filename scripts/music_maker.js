@@ -370,8 +370,8 @@ function random_pop_up(image_id) {
     var starting_positionW = get_random_num(20, ($("#main").width()  - this_img.width()));
     var starting_positionH = get_random_num(20, ($("#main").height() - this_img.height()));
 
-    this_img.css("left", starting_positionW + "px");
-    this_img.css("top",  starting_positionH + "px");
+    this_img.css("left",    starting_positionW + "px");
+    this_img.css("bottom",  starting_positionH + "px");
 
     setTimeout(function() {
         this_img.remove();
