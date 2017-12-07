@@ -178,12 +178,13 @@ function change_mode() {
     reset_genre_borders();
     $("#" + mode).css("border", "5px solid yellow");
 
-    // hide "[Esc] to exit" (in case prev mode was "tutorial")
-    $("footer").css("visibility", "hidden");
+    // show footer (will be hidden immediately if still in "initial" state)
+    $("footer").css("visibility", "visible");
 
-    // re-display instructions if state === "initial"
+    // re-display instructions & hide footer if state === "initial"
     if (state === "initial") {
         $("#instructions").css("visibility", "visible");
+        $("footer").css("visibility", "hidden");
     }//end if
 
     // reset "tutorial mode" stuff
@@ -205,6 +206,7 @@ function change_mode() {
         $("#start_tutorial").css("visibility", "visible");
         $("#image_on_screen").attr("src", "./img/twinkle.png");
         $("#red_line").css("visibility", "visible");
+        $("footer").css("visibility", "hidden");
     }//end if tutorial
 }//end change_mode()
 
@@ -365,8 +367,8 @@ function random_pop_up(image_id) {
     var this_time = get_random_num(500, 1000);
 
     // randomly set location
-    var starting_positionW = (Math.random() + 0.2) * ($("#main").width() - this_img.width());
-    var starting_positionH = (Math.random() + 0.2) * ($("#main").height() - this_img.height());
+    var starting_positionW = get_random_num(20, ($("#main").width()  - this_img.width()));
+    var starting_positionH = get_random_num(20, ($("#main").height() - this_img.height()));
 
     this_img.css("left", starting_positionW + "px");
     this_img.css("top",  starting_positionH + "px");
