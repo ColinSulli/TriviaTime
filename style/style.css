@@ -127,3 +127,8 @@ footer {
     line-height: 20px;
     vertical-align: bottom;
 }
+
+.acker_quote {
+    background-color: yellow;
+    font-size: 14px;
+}

@@ -503,14 +503,7 @@ function check_for_ackermode(key) {
     // if we made it out of the for loop without returning, we're in ACKERMODE
     console.log("ACKERMODE INITIATED!");
 
-    // create Prof. Ackerman image and append to HTML
-    acker_img_id = "acker-img-" + acker_img_index;
-    var acker_img_div = "<div id='" + acker_img_id + "' class='images'></div>";
-    $('#main').append(acker_img_div);
-    acker_img_index++;
-    $("#" + acker_img_id).append("<img src='./img/ackerman.png'/>");
-
-    // play an Ackerman sound
+    // Prof. Ackerman quotes
     var acker_tones = [ "./audio/Ackerman/extraordinary.mp3",
                         "./audio/Ackerman/student_biscuits.mp3",
                         "./audio/Ackerman/idiot.mp3",
@@ -522,15 +515,48 @@ function check_for_ackermode(key) {
                         "./audio/Ackerman/farting_sounds.mp3",
                         "./audio/Ackerman/fast_furious.mp3"
                       ];
-    var sound = acker_tones[Math.floor(Math.random() * acker_tones.length)];
+
+    // "quotes" to go under image during animation
+    var acker_quotes = ["\"Extraordinary\"",
+                        "\"Student Biscuits\"",
+                        "\"Your friend must be an idiot\"",
+                        "\"Think-Alouds\"",
+                        "\"Computer Science\"",
+                        "\"Wrestling\"",
+                        "\"How many kids are you gonna kidnap off the street?\"",
+                        "\"Kids like Mickey Mouse more than they like frogs\"",
+                        "\"Farting sounds\"",
+                        "\"Fast and...kinda furious\""
+                      ];
+
+    // pick random number
+    var random = Math.floor(Math.random() * acker_tones.length);
+    var quote = acker_quotes[random];
+
+    // create Prof. Ackerman image with the actual quote and append to HTML
+    acker_img_id = "acker-img-" + acker_img_index;
+    var acker_img_div = "<div id='" + acker_img_id + "' class='images'><p class='acker_quote'>" + quote + "</p></div>";
+    $('#main').append(acker_img_div);
+    acker_img_index++;
+    $("#" + acker_img_id).append("<img src='./img/ackerman.png'/>");
+
+    // play the mp3 quote
+    var sound = acker_tones[random];
     var audio = new Audio(sound);
     audio.play();
 
-    // randomly animate image
-    // var random_animation_func = get_random_num(0, animations.length);
-    // var this_animation = animations[random_animation_func];
-    // this_animation(acker_img_id);
+    // Display image
+    var this_img = $('#' + acker_img_id);
 
-    // just have him pop up quickly
-    random_pop_up(acker_img_id);
+    // randomly set pop-up location
+    var starting_positionW = (Math.random() + 0.2) * ($("#main").width()  - this_img.width());
+    var starting_positionH = (Math.random() + 0.2) * ($("#main").height() - this_img.height());
+
+    this_img.css("left", starting_positionW + "px");
+    this_img.css("top",  starting_positionH + "px");
+
+    // display his image with quote for 1.8 seconds
+    setTimeout(function() {
+        this_img.remove();
+    }, 1800);
 }//end check_for_ackermode()
