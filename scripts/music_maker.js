@@ -511,15 +511,16 @@ function check_for_ackermode(key) {
     $("#" + acker_img_id).append("<img src='./img/ackerman.png'/>");
 
     // play an Ackerman sound
-    // FIXME
-    var acker_tones = [ "./audio/Ackerman/FIXME.mp3",
-                        // "./audio/Ackerman/FIXME.mp3",
-                        // "./audio/Ackerman/FIXME.mp3",
-                        // "./audio/Ackerman/FIXME.mp3",
-                        // "./audio/Ackerman/FIXME.mp3",
-                        // "./audio/Ackerman/FIXME.mp3",
-                        // "./audio/Ackerman/FIXME.mp3",
-                        "./audio/Ackerman/FIXME.mp3"
+    var acker_tones = [ "./audio/Ackerman/extraordinary.mp3",
+                        "./audio/Ackerman/student_biscuits.mp3",
+                        "./audio/Ackerman/idiot.mp3",
+                        "./audio/Ackerman/think_alouds.mp3",
+                        "./audio/Ackerman/CS.mp3",
+                        "./audio/Ackerman/wrestling.mp3",
+                        "./audio/Ackerman/kidnap.mp3",
+                        "./audio/Ackerman/mickey_mouse_vs_frogs.mp3",
+                        "./audio/Ackerman/farting_sounds.mp3",
+                        "./audio/Ackerman/fast_furious.mp3"
                       ];
     var sound = acker_tones[Math.floor(Math.random() * acker_tones.length)];
     var audio = new Audio(sound);

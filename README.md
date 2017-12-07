@@ -85,3 +85,4 @@ Sounds used in "random mode" are taken from the above sources or the sources lis
 - https://freesound.org/search/?q=squish&f=&s=duration+asc&advanced=0&g=1
 - https://freesound.org/search/?q=shotgun&s=duration+asc&g=1&advanced=0&f=&page=2#sound
 - https://freesound.org/search/?q=doorbell&f=&s=duration+asc&advanced=0&g=1
+Sounds played during "ACKERMODE" were taken from the Lecture Recordings on Canvas.
