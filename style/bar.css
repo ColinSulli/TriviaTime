@@ -1,0 +1,202 @@
+/* Generic HTML Tags */
+
+body {
+  font-family: azaura;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: url("question_mark_lish.jpeg");
+  background-repeat: repeat;
+}
+
+p {
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    visibility: hidden;
+}
+
+/* MENU BAR ITEMS */
+.row {
+    align-content: center;
+    border-bottom: 7px solid #084E7E;
+    height: 100px;
+    cursor:auto;
+}
+
+.col-md-2 {
+    height: 100%;
+}
+
+.col-xs-2 {
+    font-size: 30px;
+    height: 33%;
+    margin:auto;
+    cursor:auto;
+}
+
+.genre_selector {
+    color: black;
+    cursor: pointer;
+    font-weight: medium;
+    text-align: center;
+}
+
+#title {
+    border: none;
+    padding-top: 5px;
+    height: 0px;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+}
+
+#bars {
+    top:22px;
+    border: 5px solid #0DAF00;
+    background: #0DAF00;
+    color: white;
+    cursor: auto;
+}
+
+#drum_kit {
+    top:27px;
+    background: #B4B4B4;
+    color: white;
+    cursor: auto;
+}
+#questions {
+    top:27px;
+    background: #B4B4B4;
+    color: white;
+    cursor: auto;
+}
+
+#score {
+    top:27px;
+    background: #B4B4B4;
+    color: white;
+    cursor: auto;
+}
+
+/* MAIN SCREEN ITEMS */
+#main {
+    height: 500px;
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#owner {
+    border: 2px solid black;
+    background: grey;
+}
+
+.images {
+    position: absolute;
+}
+
+#img_div {
+    vertical-align: middle;
+    z-index: 2;
+}
+
+/* Container needed to position the button. Adjust the width as needed */
+.container_btn {
+  position: relative;
+  
+} 
+
+/* Make the image responsive */
+.container_btn img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container_btn .btnC {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #084E7E;
+  opacity: .8;
+  color: white;
+  font-size: 37px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container_btn .btnC:hover {
+  background-color: #002E7E;
+}
+
+.btnC {
+    height: 100px;
+    width: 200px;
+    background-color: transparent;
+}
+
+.container_btn .btnM {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #084E7E;
+  opacity: .8;
+  color: white;
+  font-size: 37px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container_btn .btnM:hover {
+  background-color: #002E7E;
+}
+
+.btnM {
+    height: 100px;
+    width: 200px;
+    background-color: transparent;
+}
+
+.container_btn .btnB {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #084E7E;
+  opacity: .8;
+  color: white;
+  font-size: 37px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container_btn .btnB:hover {
+  background-color: #002E7E;
+}
+
+.btnB {
+    height: 100px;
+    width: 200px;
+    background-color: transparent;
+}

@@ -1,0 +1,115 @@
+/* Generic HTML Tags */
+body {
+  font-family: azaura;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: url("question_mark_lish.jpeg");
+  background-repeat: repeat;
+}
+
+p {
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    visibility: hidden;          /* Default: show only during interactive mode */
+}
+
+/* MENU BAR ITEMS */
+
+#logo {
+    cursor: pointer;
+}
+
+.row {
+    align-content: center;
+    border-bottom: 7px solid #084E7E;
+    height: 100px;
+    cursor:auto;
+}
+
+.col-xs-2 {
+    font-size: 30px;
+    height: 33%;
+    margin:auto;
+}
+
+.genre_selector {
+    color: black;
+    cursor: pointer;
+    font-weight: medium;
+    text-align: center;
+}
+
+#title {
+    border: none;
+    padding-top: 5px;
+    height: 0px;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+}
+
+#bars {
+    top: 22px;
+    border: 5px solid #0DAF00;
+    background: #0DAF00;
+    color: white;
+}
+
+#drum_kit {
+    top: 22px;
+    border: 5px solid #0DAF00;
+    background: #0DAF00;
+    color: white;
+}
+#questions {
+    top: 27px;
+    background: #B4B4B4;
+    color: white;
+}
+
+#score {
+    top: 27px;
+    background: #B4B4B4;
+    color: white;
+}
+
+/* MAIN SCREEN ITEMS */
+#main {
+    height: 500px;
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#img_div {
+    vertical-align: middle;
+    z-index: 2;
+}
+
+#code {
+    z-index: 1;
+    visibility: visible;
+    margin: auto;
+    width: 50%;
+}
+
+#team {
+    visibility: hidden;
+    z-index: 1;
+    top: 17%;
+    left: 25%;
+    width:50%;
+    position: absolute;
+    vertical-align: middle;
+}

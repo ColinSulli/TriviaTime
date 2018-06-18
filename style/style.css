@@ -22,6 +22,15 @@ footer {
 }
 
 /* MENU BAR ITEMS */
+#quiz {
+    visibility: hidden;
+    z-index: 1;
+    top: 10%;
+    left: 15%;
+    position: absolute;
+    text-align: left;
+}
+
 #logo {
     cursor: pointer;
 }
@@ -37,7 +46,7 @@ footer {
 .col-xs-2 {
     padding-bottom: 20px;
     padding-top: 20px;
-    font-size: 18px;
+    font-size: 30px;
     height: 33%;
 }
 
@@ -51,7 +60,7 @@ footer {
 #title {
     border: none;
     padding-top: 5px;
-    height: 45px;
+    height: 0px;
     left: 0px;
     top: 0px;
     text-align: center;
@@ -67,25 +76,24 @@ footer {
     border: 2px solid black;
     background: orange;
 }
-
-#techno {
+#questions {
     border: 2px solid black;
-    background: #FF69B4;
-    color: #69FFB4;
+    background: pink;
 }
 
-#piano {
+#score {
     border: 2px solid black;
-    background: black;
-    color: white;
+    background: green;
 }
 
-#tutorial {
-    border: 2px solid black;
-    background: purple;
-    color: white;
+#score_body{
+    visibility: hidden;
+    z-index: 1;
+    top: 10%;
+    left: 15%;
+    position: absolute;
+    text-align: left;
 }
-
 
 /* MAIN SCREEN ITEMS */
 #main {
@@ -105,30 +113,88 @@ footer {
     z-index: 2;
 }
 
-#start_tutorial {
-    visibility: hidden; /* default */
-    font-size: 16px;
+#team {
+    visibility: hidden;
+    z-index: 1;
+    top: 20%;
+    left: 30%;
+    position: absolute;
+    vertical-align: middle;
 }
 
-#red_line{
-    position: relative;
-    vertical-align: top;
-    top: 10px;          /* needed to properly align line with sheet music */
-    z-index: 5;
-    visibility: hidden; /* default */
-    height: 70px;
-    width: 6px;
+#owner {
+    border: 2px solid black;
+    background: grey;
 }
 
-#prev_keys {
-    text-align: center;
-    font-weight: bold;
-    font-size: medium;
-    line-height: 20px;
-    vertical-align: bottom;
+#admin_owner {
+    visibility: hidden;
+    z-index: 12;
+    top: 30%;
+    left: 30%;
+    position: absolute;
+    vertical-align: middle;
+}
+#quiz_maker {
+  visibility: hidden;
+  z-index: 14;
+  top:0px;
+ /* top: 20%;
+  left: 10%;*/
+  position: absolute;
+  vertical-align: middle;
+}
+#admin_menu {
+  visibility: hidden;
+  z-index: 15;
+  top:0px;
+ /* top: 20%;
+  left: 10%;*/
+  position: absolute;
+  vertical-align: middle;
 }
 
-.acker_quote {
-    background-color: yellow;
-    font-size: 16px;
+#published_quiz1 {
+  background-color: #4CAF50; /* Green */
+}
+
+/* Container needed to position the button. Adjust the width as needed */
+.container_btn {
+  position: relative;
+  
+}
+
+/* for buttons on images */
+
+/* Make the image responsive */
+.container_btn img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container_btn .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  opacity: .8;
+  color: white;
+  font-size: 37px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container_btn .btn:hover {
+  background-color: #777;
+}
+
+.btn {
+    height: 100px;
+    width: 200px;
+    background-color: transparent;
 }

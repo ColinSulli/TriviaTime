@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="style/admin.css">
+  
+  <!-- JQuery -->
+  <script src="scripts/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDPNlWLrndHWxbUbHUczDaAEqTL-S-MlqY",
+        authDomain: "project-eecs441.firebaseapp.com",
+        databaseURL: "https://project-eecs441.firebaseio.com",
+        projectId: "project-eecs441",
+        storageBucket: "project-eecs441.appspot.com",
+        messagingSenderId: "474210736887"
+      };
+      firebase.initializeApp(config);
+    </script>
+  
+  
+  <!-- OUR JAVASCRIPT FILES -->
+  <script src="scripts/keys.js"></script>
+  <script src="scripts/master_dict.js"></script>
+  <script src="scripts/music_maker.js"></script>
+
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+  <!-- <title>493 Music Maker</title> -->
+
+  <meta charset="UTF-8">
+  <meta name="description" content="EECS 493 Final Project">
+  <meta name="keywords" content="HTML, CSS, Bootstrap, JavaScript, JQuery">
+  <meta name="authors" content="Colin Sullivan, David Horsfield, Jacob Byrnes">
+</head>
+
+<!-- HTML -->
+<body onload = "published()">
+  <div class="row" id="header">
+
+    <div class="col-xs-2" id="title">
+      <img id="logo" src="./img/Trivia_Time.png" style="width:190px;height:80px;">
+    </div>
+
+    <div class="col-xs-10 genre_selector">
+      <div class="col-xs-2 genre" id="bars">
+        <h2>BARS</h2>
+      </div>
+      <div class="col-xs-2 genre" id="drum_kit">
+        <h2>TEAM</h2>
+      </div>
+      <div class="col-xs-2 genre" id="questions">
+        <h2>QUIZ</h2>
+      </div>
+      <div class="col-xs-2 genre" id="score">
+        <h2>SCORE</h2>
+      </div>
+      <div class="col-xs-2 genre" id="owner">
+        <h2>ADMIN</h2>
+      </div>
+    </div>
+
+  </div> <!-- end header -->
+
+  <div id="admin_menu">
+      <h1>MENU</h3>
+      <h4>*Click the quizes below to edit*</h4>
+      <h3>Quizes:</h3>
+      <div id="staticDiv"></div>
+        <input id='make_new_quiz' type="submit" value="+ Make New Quiz"><br><br>
+        <div class="published_quizzes"></div>
+  </div>
+
+</body>
+<!-- <footer>Hit the [Esc] key to exit</footer> -->
+
+</html>

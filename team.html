@@ -3,21 +3,22 @@
 
 <head>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="style/bar.css">
+  <link rel="stylesheet" type="text/css" href="style/team.css">
   
   <!-- JQuery -->
   <script src="scripts/jquery.min.js"></script>
 
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
@@ -30,6 +31,7 @@
       };
       firebase.initializeApp(config);
     </script>
+  
   
   <!-- OUR JAVASCRIPT FILES -->
   <script src="scripts/keys.js"></script>
@@ -52,6 +54,7 @@
   <div class="row" id="header">
 
     <div class="col-xs-2" id="title">
+      
     </div>
 
     <div class="col-xs-10 genre_selector">
@@ -71,46 +74,27 @@
         <h4>SCORE</h4>
       </div>
     </div>
+
   </div> <!-- end header -->
-
-  <div id="main">     
-    <div id="prev_keys"></div>     
-    <br>
-    <img id="logo" src="./img/Trivia_Time.png" style="width:510;height:162px;">
+  <div id = "code">
     <br><br>
-    <p id="instructions" style="font-size:40px">Please Select the Bar you Are at</p>
-    <!-- <button id="start_tutorial">Start Tutorial</button><br><br> -->
-    <div id="img_div">
-      <div class="container_btn">
-        <img id="image_on_screen" src="./img/Charleys.png" style = "width:50%;height:auto">
-          <button class="btnC">
-            <h2>Charley's</h2>
-          </button>
-      </div>
-      <br><br>
-
-      <div class="container_btn">
-        <img id="image_on_screen" src="./img/mash.png" style = "width:50%;height:auto">
-        <button class="btnM">Mash</button>
-      </div>
-      <br><br>
-
-      <div class="container_btn">
-        <img id="image_on_screen" src="./img/bdubs.png" style = "width:50%;height:auto">
-        <button class="btnB">BWW</button>
-      </div>
-      <div class="admin_link">
-      <br><br>
-      <a href="login.html">Admin</a>
-      </div>
-      <br><br>
-    </div>
+    <h3>Please Enter  Bar Code Below:</h3>
+    <br>
+    <input id = "barcode" class="form-control input-lg" type = text placeholder = "Bar Code"/>
+    <br>
+    <input id='codesubmit' class = "tn btn-primary btn-lg btn-block" type="submit" value="Submit">
+  </div>
+  <div id="team">
+    <h3>Enter Team Name </h3>
+    <input id='teams' class="form-control input-lg" type="text" name="team" placeholder="Team Name"/>
+    <br>
+    <h3>Enter Player Names Separated by Commas</h3>
+    <input id='player' class="form-control input-lg" type="text" name="player" placeholder="Player Names"/>
+    <br><br>
+    <input id='submitButton' class = "tn btn-primary btn-lg btn-block" type="submit" value="Submit">
   </div>
 
 </body>
 <!-- <footer>Hit the [Esc] key to exit</footer> -->
 
 </html>
-
-
-

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="style/score.css">
+  
+  <!-- JQuery -->
+  <script src="scripts/jquery.min.js"></script>
+
+   <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDPNlWLrndHWxbUbHUczDaAEqTL-S-MlqY",
+        authDomain: "project-eecs441.firebaseapp.com",
+        databaseURL: "https://project-eecs441.firebaseio.com",
+        projectId: "project-eecs441",
+        storageBucket: "project-eecs441.appspot.com",
+        messagingSenderId: "474210736887"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+  
+  
+  <!-- OUR JAVASCRIPT FILES -->
+  <script src="scripts/keys.js"></script>
+  <script src="scripts/master_dict.js"></script>
+  <script src="scripts/music_maker.js"></script>
+
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+  <!-- <title>493 Music Maker</title> -->
+
+  <meta charset="UTF-8">
+  <meta name="description" content="EECS 493 Final Project">
+  <meta name="keywords" content="HTML, CSS, Bootstrap, JavaScript, JQuery">
+  <meta name="authors" content="Colin Sullivan, David Horsfield, Jacob Byrnes">
+</head>
+
+<!-- HTML -->
+<body id='scorePage' onload='score_Loader()'>
+  <div class="row head" id="header">
+
+    <div class="col-xs-2" id="title">
+    </div>
+
+    <div class="col-xs-10 genre_selector">
+      <div class="col-xs-2 genre" id="bars">
+        <h4>BARS</h4>
+      </div>
+      <div style = "width:50px;" class="col-xs-2 genre"></div>
+      <div class="col-xs-2 genre" id="drum_kit">
+        <h4>TEAM</h4>
+      </div>
+      <div style = "width:50px;" class="col-xs-2 genre"></div>
+      <div class="col-xs-2 genre" id="questions">
+        <h4>QUIZ</h4>
+      </div>
+      <div style = "width:50px;" class="col-xs-2 genre"></div>
+      <div class="col-xs-2 genre" id="score">
+        <h4>SCORE</h4>
+      </div>
+    </div>
+    <div class="scoreboard_class">
+    <br><br><br><br><br><br><br><br><br>
+    <input id='score_btn_back' class="btn btn-primary btn-lg btn-block" type="submit" style="width:75%; margin:auto" value="Return to Score">
+    <h2 align="center">Score Board</h2> 
+     <table class="table table-bordered">
+      </tr>
+    </tbody>
+  </table>
+</div>        
+    <div style = "width:75%; margin: auto" id="inject_div_score_board"></div>
+  </div>
+   <!-- end header -->
+  <nav id = "timer_div">Time left = <span id="timer"></span></nav>
+    <div class="score_body" style="top: 220px; z-index: 5;">
+    </div>
+    <br><input id='score_btn' class="btn btn-primary btn-lg btn-block" type="submit" style="width:75%; margin:auto; z-index:100;" value="Scoreboard">
+  </div>
+
+</body>
+<!-- <footer>Hit the [Esc] key to exit</footer> -->
+
+</html>

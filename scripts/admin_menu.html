@@ -3,7 +3,7 @@
 
 <head>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="style/bar.css">
+  <link rel="stylesheet" type="text/css" href="style/admin.css">
   
   <!-- JQuery -->
   <script src="scripts/jquery.min.js"></script>
@@ -16,6 +16,8 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
 
   <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script>
@@ -30,6 +32,7 @@
       };
       firebase.initializeApp(config);
     </script>
+  
   
   <!-- OUR JAVASCRIPT FILES -->
   <script src="scripts/keys.js"></script>
@@ -52,58 +55,37 @@
   <div class="row" id="header">
 
     <div class="col-xs-2" id="title">
+      <img id="logo" src="./img/Trivia_Time.png" style="width:190px;height:80px;">
     </div>
 
     <div class="col-xs-10 genre_selector">
       <div class="col-xs-2 genre" id="bars">
-        <h4>BARS</h4>
+        <h2>BARS</h2>
       </div>
-      <div style = "width:50px;" class="col-xs-2 genre"></div>
       <div class="col-xs-2 genre" id="drum_kit">
-        <h4>TEAM</h4>
+        <h2>TEAM</h2>
       </div>
-      <div style = "width:50px;" class="col-xs-2 genre"></div>
       <div class="col-xs-2 genre" id="questions">
-        <h4>QUIZ</h4>
+        <h2>QUIZ</h2>
       </div>
-      <div style = "width:50px;" class="col-xs-2 genre"></div>
       <div class="col-xs-2 genre" id="score">
-        <h4>SCORE</h4>
+        <h2>SCORE</h2>
+      </div>
+      <div class="col-xs-2 genre" id="owner">
+        <h2>ADMIN</h2>
       </div>
     </div>
+
   </div> <!-- end header -->
-
-  <div id="main">     
-    <div id="prev_keys"></div>     
-    <br>
-    <img id="logo" src="./img/Trivia_Time.png" style="width:510;height:162px;">
-    <br><br>
-    <p id="instructions" style="font-size:40px">Please Select the Bar you Are at</p>
-    <!-- <button id="start_tutorial">Start Tutorial</button><br><br> -->
-    <div id="img_div">
-      <div class="container_btn">
-        <img id="image_on_screen" src="./img/Charleys.png" style = "width:50%;height:auto">
-          <button class="btnC">
-            <h2>Charley's</h2>
-          </button>
-      </div>
-      <br><br>
-
-      <div class="container_btn">
-        <img id="image_on_screen" src="./img/mash.png" style = "width:50%;height:auto">
-        <button class="btnM">Mash</button>
-      </div>
-      <br><br>
-
-      <div class="container_btn">
-        <img id="image_on_screen" src="./img/bdubs.png" style = "width:50%;height:auto">
-        <button class="btnB">BWW</button>
-      </div>
-      <div class="admin_link">
-      <br><br>
-      <a href="login.html">Admin</a>
-      </div>
-      <br><br>
+    <div id="admin_menu">
+      <h1>MENU</h3>
+      <h4>*Click the quizes below to edit*</h4>
+      <h3>Quizes:</h3>
+      <div id="staticDiv"></div>
+        
+      <div class="published_quizzes">
+        
+      <input id='make_new_quiz' type="submit" value="+ Make New Quiz"><br><br>
     </div>
   </div>
 
@@ -111,6 +93,3 @@
 <!-- <footer>Hit the [Esc] key to exit</footer> -->
 
 </html>
-
-
-
